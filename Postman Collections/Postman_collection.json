@@ -2204,49 +2204,49 @@
 	],
 	"variable": [
 		{
-			"id": "5151260a-daa4-47ac-b173-cebfef2f192a",
+			"id": "d4fe7198-bf73-458b-924d-618711a43290",
 			"key": "TrelloKey",
 			"value": "Your own trello key",
 			"type": "string"
 		},
 		{
-			"id": "210927f5-85b5-47a1-8666-7a1a7a8003dd",
+			"id": "9244df86-2480-4708-b93f-6ab748476f08",
 			"key": "TrelloToken",
 			"value": "Your own trello token",
 			"type": "string"
 		},
 		{
-			"id": "ae84e2ab-d08f-4281-91c7-7ee7c04aea41",
+			"id": "2859cc47-613d-4b2c-85dc-5c219027cfc4",
 			"key": "base_url",
 			"value": "https://api.trello.com"
 		},
 		{
-			"id": "a529614f-3552-44e1-bd1b-75c4648e77b7",
+			"id": "10772fd1-52d5-439c-b9e7-2089525f430b",
 			"key": "toolIds",
 			"value": "List of boards"
 		},
 		{
-			"id": "44da1ff1-ae08-4b99-af63-a11846b2362f",
+			"id": "fdf21f4b-3b23-407a-8c76-63cd3a907589",
 			"key": "currentToolId",
 			"value": ""
 		},
 		{
-			"id": "52fbf27e-a3f3-4431-8021-05c1d0d2804f",
+			"id": "21b93527-774b-48fd-b31e-3d814ac984fa",
 			"key": "ToDoListId",
 			"value": ""
 		},
 		{
-			"id": "7518b77c-b57d-440c-b27b-08c2be2ecf72",
+			"id": "1b613c2c-3662-428a-ae06-bde951f9acaa",
 			"key": "DoingListId",
 			"value": ""
 		},
 		{
-			"id": "32d3de01-6f51-461e-b1b8-5e401a523b0b",
+			"id": "c3053993-61e1-46a8-9ace-a79b4be32b4e",
 			"key": "DoneListId",
 			"value": ""
 		},
 		{
-			"id": "ba1b7f8f-5bd7-45ce-964c-dc7ce5746817",
+			"id": "4d26f754-ab2c-4f9a-bca7-7d4c4b5fc284",
 			"key": "allBoardIds",
 			"value": [
 				"64f96256f5e14905a42dca36",
@@ -2264,53 +2264,53 @@
 			]
 		},
 		{
-			"id": "af154206-52c7-4bcf-ad99-294bfa08170f",
+			"id": "ef73d82a-8acd-43cf-82bb-88cf6ec9b060",
 			"key": "memberId",
 			"value": "61f6a14321c5f77bed29eaa1"
 		},
 		{
-			"id": "b3449078-3711-4838-ba6f-44e653504bb7",
+			"id": "4aadf25f-4f62-42d9-958d-16aab8381846",
 			"key": "currentBoardId",
 			"value": "650737a0c0c027374d9523e5"
 		},
 		{
-			"id": "13c45c99-e030-42ec-bf69-1ae6c8dd3dd5",
+			"id": "da9a40a3-8550-46b5-a260-a12bef816585",
 			"key": "listDoneID",
 			"value": ""
 		},
 		{
-			"id": "d8c8835e-44e1-42b9-b8d0-500a2cf84857",
+			"id": "bcea8e96-8966-41b0-84e4-03a71b5b5119",
 			"key": "listDelayId",
 			"value": ""
 		},
 		{
-			"id": "b526c0a4-7883-416a-9bdc-e21a73da8d5e",
+			"id": "68ed98fc-ad7b-412d-97b3-de69558aabe9",
 			"key": "cardId",
 			"value": ""
 		},
 		{
-			"id": "cac5dec3-bb10-47c6-b5fc-85b48ace675e",
+			"id": "225c7edc-76b5-40ef-8780-1c87d36057ce",
 			"key": "boardId",
 			"value": ""
 		},
 		{
-			"id": "fd0b489d-f19a-45a7-a2b0-be45c24980fe",
+			"id": "0f4e9ed2-10c8-4b31-a4cb-2a308686acfb",
 			"key": "boardNumber",
 			"value": ""
 		},
 		{
-			"id": "138c872e-4baa-4ee2-af66-c380bdddf822",
+			"id": "7d8c617d-4370-4ec8-9ce0-e6f0d843aac7",
 			"key": "boardName",
 			"value": ""
 		},
 		{
-			"id": "ebd7dd06-5c25-429d-97c9-0f85fac762ae",
+			"id": "f1138f48-2a92-4b9d-8a87-b5649e6417ae",
 			"key": "idOrganization",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "dda5335a-4ba2-49ea-814a-aaf89b47a439",
+			"id": "15e8e3d7-cd4f-4044-b911-900fdafe1ae2",
 			"key": "userNameOfTheMember",
 			"value": "Your own username"
 		}
