@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "532f1e8e-2b13-413a-a4eb-ae779f08e2d2",
 		"name": "trello-rest-api-testing",
-		"description": "## Introduction\n\nTrello is a web-based, list-making application and famous project management tool used to manage projects, organize tasks and build team collaboration. The major idea of creating this collection _trello-rest-api-testing_ in Postman is to test the main functionality that the Trello application allows us to do such as create/get/delete boards, create/get lists, create/get/update/move cards, add new member/comment to a card, create a checklist on a card.\n\nEach request is tested with regards to testing status code, response body, headers, cookies.\n\nThis collection includes two folders: happy path testing and negative testing. _Happy path testing_ is executed to verify that the Trello application is working according to the specified requirements by providing valid _test_ data provided by the Trello developer team with [the Trello REST API documentation](https://developer.atlassian.com/cloud/trello/rest/api-group-actions/). On the other hand negative testing folder consists of requests that ensure that the Trello application can gracefully handle invalid input or unexpected user behavior.\n\n## Getting started\n\nBefore to start sending requests to the Trello REST API check out and familiar with the [API Introduction](https://) first to understand better what is the possibilities which Trello allows us to build.\n\n1. Creat a Trello Power-Up\n    \n\nTrello uses a delegated authentication and authorization flow, that means no usernames and passwords using there. Instead of it, to get started is needed to generate an API key. To do it you first need to have created Trello Power-Up. In this case check out [Managing Power-Up](https://).\n\n2\\. Generate a new API key\n\nOnce you already have created a Power-Up you can [generate a new API key.](https://)\n\n3\\. Generate a Token access\n\nOn the same page where you found an API key at the right of it you can see the hyperlinked \"Token\" also known as a Secret. Follow this instruction: [https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/#authentication-and-authorization](https://)\n\n[Note:](https://) Token should be kept secret\n\n## Collection of requests\n\n#### Happy path\n\n1. Create a new board\n2. Get our member's data\n3. Get Boards that Member behind to\n4. Get all lists on the board\n5. Create a new list Delay\n6. Create a new card in To Do list\n7. Get all cards on the To Do list\n8. Undate contents of the card\n9. Add a member to the card\n10. Get the member of the card\n11. Create a checklist in the card\n12. Move all cards from To Do list to Doing list\n13. Get all cards on the Doing list\n14. Add a new comment to the card\n15. Delete the board\n    \n\n#### Negative testing\n\n1. Getting deleted board\n    \n\n##### Missing authentication\n\n- Missing token\n    \n\n1. Create a new board\n    \n\n- Invalid token\n    \n\n1. Create a new board\n    \n\n##### Duplication of activities\n\n1. Adding the already added member to the card\n2. Moving cards that have been already moved all cards from To Do list to Doing\n3. Removing deleted board",
+		"description": "## Introduction\n\nTrello is a web-based, list-making application and famous project management tool used to manage projects, organize tasks and build team collaboration. The major idea of creating this collection _trello-rest-api-testing_ in Postman is to test the main functionality that the Trello application allows us to do such as create/get/delete boards, create/get lists, create/get/update/move cards, add new member/comment to a card, create a checklist on a card.\n\nEach request is tested with regards to testing status code, response body, headers, cookies.\n\nThis collection includes two folders: happy path testing and negative testing. _Happy path testing_ is executed to verify that the Trello application is working according to the specified requirements by providing valid _test_ data provided by the Trello developer team with [the Trello REST API documentation](https://developer.atlassian.com/cloud/trello/rest/api-group-actions/). On the other hand negative testing folder consists of requests that ensure that the Trello application can gracefully handle invalid input or unexpected user behavior.\n\n## Getting started\n\nBefore to start sending requests to the Trello REST API check out and familiar with the [API Introduction](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/#authentication-and-authorization) first to understand better what is the possibilities which Trello allows us to build.\n\n1. Creat a Trello Power-Up\n    \n\nTrello uses a delegated authentication and authorization flow, that means no usernames and passwords using there. Instead of it, to get started is needed to generate an API key. To do it you first need to have created Trello Power-Up. In this case check out [Managing Power-Up](https://).\n\n2\\. Generate a new API key\n\nOnce you already have created a Power-Up you can [generate a new API key.](https://)\n\n3\\. Generate a Token access\n\nOn the same page where you found an API key at the right of it you can see the hyperlinked \"Token\" also known as a Secret. Follow this instruction: [https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/#authentication-and-authorization](https://)\n\n[Note:](https://) Token should be kept secret\n\n## Collection of requests\n\n#### Happy path\n\n1. Create a new board\n2. Get our member's data\n3. Get Boards that Member behind to\n4. Get all lists on the board\n5. Create a new list Delay\n6. Create a new card in To Do list\n7. Get all cards on the To Do list\n8. Undate contents of the card\n9. Add a member to the card\n10. Get the member of the card\n11. Create a checklist in the card\n12. Move all cards from To Do list to Doing list\n13. Get all cards on the Doing list\n14. Add a new comment to the card\n15. Delete the board\n    \n\n#### Negative testing\n\n1. Getting deleted board\n    \n\n##### Missing authentication\n\n- Missing token\n    \n\n1. Create a new board\n    \n\n- Invalid token\n    \n\n1. Create a new board\n    \n\n##### Duplication of activities\n\n1. Adding the already added member to the card\n2. Moving cards that have been already moved all cards from To Do list to Doing\n3. Removing deleted board",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -2204,40 +2204,49 @@
 	],
 	"variable": [
 		{
+			"id": "af9dcdeb-fa9d-48b4-b57c-306bc0842b54",
 			"key": "TrelloKey",
 			"value": "Your own trello key",
 			"type": "string"
 		},
 		{
+			"id": "9f505b77-fe82-42a3-ad18-3d6cf1a9fa46",
 			"key": "TrelloToken",
 			"value": "Your own trello token",
 			"type": "string"
 		},
 		{
+			"id": "f854b353-43bc-4f83-b8fa-8e728b9873ef",
 			"key": "base_url",
 			"value": "https://api.trello.com"
 		},
 		{
+			"id": "1624b8d3-19b7-4c40-901b-c969a363648e",
 			"key": "toolIds",
 			"value": "List of boards"
 		},
 		{
+			"id": "0c39a443-81ca-41f3-a869-dcb5ebd76811",
 			"key": "currentToolId",
 			"value": ""
 		},
 		{
+			"id": "b9e08625-768e-4ccb-80e4-fc3841800bd8",
 			"key": "ToDoListId",
 			"value": ""
 		},
 		{
+			"id": "ed91de1a-d9bb-4e9f-9715-feff3d4e2672",
 			"key": "DoingListId",
 			"value": ""
 		},
 		{
+			"id": "bc7d6973-9c0a-42d7-9466-601ed1a0470b",
 			"key": "DoneListId",
 			"value": ""
 		},
 		{
+			"id": "9dd9a8e5-64c9-40c4-a053-67527d6a7c63",
 			"key": "allBoardIds",
 			"value": [
 				"64f96256f5e14905a42dca36",
@@ -2255,43 +2264,53 @@
 			]
 		},
 		{
+			"id": "c3f33060-6a48-4533-87eb-34c5ec9cde2a",
 			"key": "memberId",
 			"value": "61f6a14321c5f77bed29eaa1"
 		},
 		{
+			"id": "923a8598-80af-4a61-afd9-d06e9366bdec",
 			"key": "currentBoardId",
 			"value": "650737a0c0c027374d9523e5"
 		},
 		{
+			"id": "d41e9363-8a1f-4aa9-86d3-27860916d76a",
 			"key": "listDoneID",
 			"value": ""
 		},
 		{
+			"id": "db8a7acb-167e-46d8-8666-181cad2e8836",
 			"key": "listDelayId",
 			"value": ""
 		},
 		{
+			"id": "cfaf24fb-0c66-4543-a8a9-1d82f2581278",
 			"key": "cardId",
 			"value": ""
 		},
 		{
+			"id": "4af04377-5fe8-449e-9c8d-9b18cb651227",
 			"key": "boardId",
 			"value": ""
 		},
 		{
+			"id": "62b8e996-eb38-4692-b151-290f151e48b7",
 			"key": "boardNumber",
 			"value": ""
 		},
 		{
+			"id": "e94328f4-8732-4f15-a35a-5e3429aaadff",
 			"key": "boardName",
 			"value": ""
 		},
 		{
+			"id": "ff538ee2-a13e-4e19-8fe2-9239aeeb3556",
 			"key": "idOrganization",
 			"value": "",
 			"type": "string"
 		},
 		{
+			"id": "e8617932-a2a3-447e-8fc4-3e8725f07165",
 			"key": "userNameOfTheMember",
 			"value": "Your own username"
 		}
