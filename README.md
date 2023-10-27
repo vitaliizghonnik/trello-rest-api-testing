@@ -1,4 +1,4 @@
-# trello-rest-api-testing-new
+# trello-rest-api-testing
 This collection aims to test the main functionality of the Trello management tool 
 # Introduction
 Trello is a web-based, list-making application and famous project management tool used to manage projects, organize tasks, and build team collaboration. The major idea of creating this collection trello-rest-api-testing in Postman is to test the main functionality that the Trello application allows us to do such as create/get/delete boards, create/get lists, create/get/update/move cards, add new member/comment to a card, create a checklist on a card.
