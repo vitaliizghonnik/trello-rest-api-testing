@@ -947,14 +947,11 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "0831ac38-8625-4ec7-b87f-e28ca57042a4",
+								"id": "789a5f4d-8bcf-4c42-be2e-19e05e655091",
 								"exec": [
-									"//If retrieving bugReportIds not availible from collection variable bugReportIds therefore getting from variable represented by array below\r",
-									"let bugReportIds = pm.collectionVariables.get(\"bugReportIds\");\r",
-									"\r",
-									"if(!bugReportIds) {\r",
-									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
-									"}\r",
+									"let bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
+									"pm.collectionVariables.set(\"bugReportIds\", bugReportIds);\r",
+									"console.log(pm.collectionVariables.get(\"bugReportIds\"));\r",
 									"//Retrieving first bug report id from array and assigning it to variable\r",
 									"let firstBugReportId = bugReportIds.shift();\r",
 									"console.log(firstBugReportId);\r",
@@ -972,7 +969,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "730a520b-16bf-4951-bac7-0dc5b31ae756",
+								"id": "53e34718-a130-4fec-a087-5618754eb059",
 								"exec": [
 									"//Status code of the response\r",
 									"pm.test(\"The checklist has been created successfully\", () => {\r",
