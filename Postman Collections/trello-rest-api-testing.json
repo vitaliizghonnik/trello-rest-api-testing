@@ -1446,6 +1446,141 @@
 						"description": "There are two ways of using the request \"Delete a board\":\n\n1. The main reason for sending a current request is to delete the board with regard to the collection perspective, deleting the board that was created in the first request for collection called \"Create a new board\"\n    \n\nNOTE: To send this request there is no need to provide any changes. This case is set up as a default.\n\n1. Deleting boards one by one via sending the \"Delete a board\" request multiple times, if occurs the need to delete not just the last created board.\n    \n\nNOTE: Neither doesn't work from a collection perspective or doesn't allow deleting multiple boards at once.\n\nInstruction for the second way of using request the \"Delete a board\":\n\n1. Send the \"Get Boards in an Organization\" request first.\n    \n2. **Scripts in the** _**Pre-request Script**_ **section** are stored as comments are needed **in case if appears necessary to delete boards one by one** that were created before in Workspace. To execute this scenario - **delete the comment signs at the beginning \"/\\*\" and end of comments \"\\*/\" in Pre-request Script section**.\n    \n3. Go to the the Params section subsection Path Variables and change in value's field of id from \"boardId\" to \"currentBoardId\".\n    \n4. Send \"Delete a board\" as much time as it's needed. Until now, there are currently no boards in the Workspace when last board has been deleted. Getting status code 400 Bad Request and response body with following context \"invalid id\""
 					},
 					"response": []
+				},
+				{
+					"name": "{{base_url}}/1/cards/:id/checklists?name=Recover steps to reproduce from bug report ID{{firstBugReportId}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "789a5f4d-8bcf-4c42-be2e-19e05e655091",
+								"exec": [
+									"//Check if bugReportIds variable already exists in the environment. Then declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
+									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
+									"//Check if the bugReportIds variable is not define or is false (i.e. it doesn't exist or is empty). If it's not defined variable initilize it with an array with four elements of bugReportIds.\r",
+									"if (!bugReportIds) {\r",
+									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
+									"}\r",
+									"//Set the \"bugReportIds\" variable in Postman environment to the bugReportIds variable\r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"//Retrieve the value of environment variable bugReportIds\r",
+									"pm.environment.get(\"bugReportIds\");\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									"//Retrieving first bug report id from array and assigning it to variable\r",
+									"let firstBugReportId = bugReportIds.shift();\r",
+									"console.log(firstBugReportId);\r",
+									"//Setting value of firstBugReportId to collection variable with the same name\r",
+									"pm.environment.set(\"firstBugReportId\", firstBugReportId);\r",
+									"console.log(pm.environment.get(\"firstBugReportId\"));\r",
+									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "53e34718-a130-4fec-a087-5618754eb059",
+								"exec": [
+									"//Status code of the response\r",
+									"pm.test(\"The checklist has been created successfully\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//Parse the json format response\r",
+									"const response = pm.response.json(); \r",
+									"//Checking an appropriative properties of response body\r",
+									"//Response body is perpesented by nonempty object\r",
+									"pm.test(\"Getting response body is an object and not empty\", () => {\r",
+									"    pm.expect(response).to.be.an(\"object\");\r",
+									"    pm.expect(Object.keys(response)).to.not.be.empty;\r",
+									"});\r",
+									"//Checking that properties of checklist is accurate and checklist is created in the expected card and the board as well\r",
+									"pm.test(\"Properties of created checklist is appropriate\", () => {\r",
+									"    pm.expect(response.id).to.be.not.empty;\r",
+									"    pm.expect(response.name).to.be.a(\"string\");\r",
+									"    pm.expect(response.idBoard).to.eql(pm.collectionVariables.get(\"boardId\"));\r",
+									"    pm.expect(response.idCard).to.eql(pm.collectionVariables.get(\"cardId\"));\r",
+									"});\r",
+									"//Retrieving of renewed bugReportIds after request has been sent \r",
+									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
+									"console.log(bugReportIds);\r",
+									"//If-else statement does the function of executing creating checklists untill the variable bugReportIds will not have an id\r",
+									"if(bugReportIds && bugReportIds.length > 0) {\r",
+									"    postman.setNextRequest(\"Create checklists in the card\");\r",
+									"    console.log(pm.info.requestName);\r",
+									"} else {\r",
+									"    postman.setNextRequest(\"Move all cards from To Do list to Doing\");\r",
+									"    console.log(pm.info.requestName);\r",
+									"};"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "fb2bb657-84f8-4e27-86bb-ac9c356cbb00",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"BugReportId\" : \"{{firstBugReportId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/1/cards/:id/checklists?name=Recover steps to reproduce from bug report ID{{firstBugReportId}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"1",
+								"cards",
+								":id",
+								"checklists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Recover steps to reproduce from bug report ID{{firstBugReportId}}",
+									"description": "The name of the checklist"
+								},
+								{
+									"key": "pos",
+									"value": "top",
+									"description": "The position of the checklist on the card. One of: top, bottom, or a positive number."
+								},
+								{
+									"key": "token",
+									"value": "{{TrelloToken}}",
+									"description": "Trello's API uses token - based authentication to grant third-party applications access to the Trello API."
+								},
+								{
+									"key": "key",
+									"value": "{{TrelloKey}}",
+									"description": "This is a application key, which Trello uses to identify the application making the request."
+								}
+							],
+							"variable": [
+								{
+									"id": "748a8561-4999-4790-9d55-f813acbffff7",
+									"key": "id",
+									"value": "{{cardId}}",
+									"description": "REQUIRED. The ID of the Card"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "3bf8455c-44a5-428f-8da6-231decc84a68",
