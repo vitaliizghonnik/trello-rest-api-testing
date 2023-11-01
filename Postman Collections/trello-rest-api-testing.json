@@ -949,7 +949,10 @@
 							"script": {
 								"id": "789a5f4d-8bcf-4c42-be2e-19e05e655091",
 								"exec": [
-									"let bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
+									"pm.collectionVariables.get(\"bugReportIds\");\r",
+									"if(!bugReportIds) {\r",
+									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
+									"};\r",
 									"pm.collectionVariables.set(\"bugReportIds\", bugReportIds);\r",
 									"console.log(pm.collectionVariables.get(\"bugReportIds\"));\r",
 									"//Retrieving first bug report id from array and assigning it to variable\r",
