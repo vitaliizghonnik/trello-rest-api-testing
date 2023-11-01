@@ -949,7 +949,8 @@
 							"script": {
 								"id": "789a5f4d-8bcf-4c42-be2e-19e05e655091",
 								"exec": [
-									"if(!bugReportIds){\r",
+									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
+									"if (!bugReportIds) {\r",
 									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
 									"}\r",
 									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
