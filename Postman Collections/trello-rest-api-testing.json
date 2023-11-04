@@ -2244,7 +2244,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7bf7b921-e822-402e-87e5-d3989e2ea635",
+				"id": "5c69afda-a2dc-48aa-b4e0-8ad04c72e5a8",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -2254,7 +2254,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "96e20d8f-3898-43e4-8783-468cebd8dab9",
+				"id": "8277699e-8659-4276-96ec-7d7e75b7db7d",
 				"type": "text/javascript",
 				"exec": [
 					"//Performance testing",
@@ -2272,47 +2272,100 @@
 		},
 		{
 			"key": "toolIds",
-			"value": ""
+			"value": [
+				"64c89939feb6a4ab6eedf4a3",
+				"64c0c144e5616372ed611e72",
+				"64c0bb618a191f265f8cd011",
+				"64c0bbc9d58ce68ddccafe49",
+				"645733cca381cb22a2f82f7b",
+				"64573fc83a6469edc0ab357d",
+				"6459f41aa9ad95560d42c207",
+				"64573f472b4d24ad2521c050",
+				"6459edf7464112cb6fbea303",
+				"647b63ea6e5b75f61f752d5d",
+				"64aced86bcc27a1108b4d71e",
+				"64c0b93fd97e2c4c27357a73",
+				"64573808a47682ab614bf23b",
+				"64770f55cdb94a7180288fd1",
+				"647b69185c79535c6c79602e",
+				"6457361042a221f2fc30a475",
+				"642bbe2e3e592becd24857d7",
+				"6453a82eef40da090ed5d5ec",
+				"6459f54308c733db4f257ca1",
+				"64573f4feab3d245ee67da29",
+				"64c0c313237e69cfd87adccc",
+				"64c0b830517422ef958d9851",
+				"6457346bfb9ac4ced0a45cb9",
+				"64c8a545964c4b29a10cad18",
+				"64b007748989a83c77f489f6",
+				"64759da11d7efbc7b01f0351",
+				"647353ee9171bf05d8bd5aae",
+				"64759fbb643786b012e67485",
+				"6475ad1f40cffdf34da57c0d",
+				"6476ea342fc84b48aab4e6cd",
+				"647362afaa87eab24b46d792"
+			]
 		},
 		{
 			"key": "currentToolId",
-			"value": ""
+			"value": "64c89939feb6a4ab6eedf4a3"
 		},
 		{
 			"key": "ToDoListId",
-			"value": ""
+			"value": "6545d980404e4a17ca755312"
 		},
 		{
 			"key": "DoingListId",
-			"value": ""
+			"value": "6545d980404e4a17ca755313"
 		},
 		{
 			"key": "DoneListId",
-			"value": ""
+			"value": "6545d980404e4a17ca755314"
 		},
 		{
 			"key": "allBoardIds",
-			"value": []
+			"value": [
+				"6541d7fba9bef02ec00c3022",
+				"6541ef48759c9b9429f69fe1",
+				"6541f10b2ee4da3e63c4b23e",
+				"6541fe6a714222715a292ad1",
+				"6545d713071e4a11727c4125",
+				"6538b7e5af8473155d225a20",
+				"6537572971f94fbfd4d5e98e",
+				"6540b763e7db2b8e2ff7d609",
+				"6545d719655615fcc6941d79",
+				"653757e34e15e0c7c7f193c1",
+				"6545d7dac8fa3adae1e6617a",
+				"65375d100cb4e88e74ee1515",
+				"6545d7e02f65e7300e9bcad5",
+				"6537637b7b87f82f79ccc88e",
+				"6545d97821a45a85f42f4e80",
+				"653765a01ba50fd37b10a32d",
+				"6545d980404e4a17ca75530b",
+				"653804926fa231cf8ca4accd",
+				"6541d610d34387b79523e94e",
+				"6541d85521ab1143fe72a0c8"
+			]
 		},
 		{
 			"key": "memberId",
-			"value": ""
+			"value": "61f6a14321c5f77bed29eaa1"
 		},
 		{
 			"key": "currentBoardId",
-			"value": ""
+			"value": "6541d85521ab1143fe72a0c8"
 		},
 		{
 			"key": "listDoneID",
-			"value": ""
+			"value": "64cf66c2f2d3306074dbe86a"
 		},
 		{
 			"key": "listDelayId",
-			"value": ""
+			"value": "6545d982a0886d59f25f1a6f"
 		},
 		{
 			"key": "cardId",
-			"value": ""
+			"value": "6545d982f9ebf59a509bb511"
 		},
 		{
 			"key": "boardId",
@@ -2320,7 +2373,7 @@
 		},
 		{
 			"key": "boardNumber",
-			"value": ""
+			"value": 1
 		},
 		{
 			"key": "boardName",
@@ -2328,20 +2381,24 @@
 		},
 		{
 			"key": "idOrganization",
-			"value": "Id of your organization",
+			"value": "e0590645-7180-42c7-8f9c-5359fdf197a4",
 			"type": "string"
 		},
 		{
 			"key": "userNameOfTheMember",
-			"value": "Your own user name"
+			"value": "vitaliizghonnik"
 		},
 		{
 			"key": "bugReportIds",
-			"value": []
+			"value": [
+				"ID 373",
+				"ID 455",
+				"ID 784"
+			]
 		},
 		{
 			"key": "firstBugReportId",
-			"value": null
+			"value": "ID 123"
 		},
 		{
 			"key": "checklistName",
