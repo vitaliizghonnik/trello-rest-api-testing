@@ -1033,7 +1033,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{base_url}}/1/cards/:id/checklists?name={{checklistName}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
+							"raw": "{{base_url}}/1/cards/:id/checklists?name=&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
 							"host": [
 								"{{base_url}}"
 							],
@@ -1046,7 +1046,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "{{checklistName}}",
+									"value": "",
 									"description": "The name of the checklist"
 								},
 								{
