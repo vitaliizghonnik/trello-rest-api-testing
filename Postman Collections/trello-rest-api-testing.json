@@ -1023,14 +1023,13 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "{{checklistName}}",
-									"type": "file",
-									"src": "three_value_BVA_data_to_test_checklist_name.json"
+							"mode": "raw",
+							"raw": "{\r\n    \"checklistName\" : {{checklistName}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "{{base_url}}/1/cards/:id/checklists?name={{checklistName}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
