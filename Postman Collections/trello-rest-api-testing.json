@@ -2244,7 +2244,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "093b284d-1d26-4d53-8e90-96b0e31c815a",
+				"id": "7bf7b921-e822-402e-87e5-d3989e2ea635",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -2254,7 +2254,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "004af2d4-0d1f-4df4-95ee-8bed7ef6fbfc",
+				"id": "96e20d8f-3898-43e4-8783-468cebd8dab9",
 				"type": "text/javascript",
 				"exec": [
 					"//Performance testing",
@@ -2346,6 +2346,11 @@
 		{
 			"key": "checklistName",
 			"value": "checklistName"
+		},
+		{
+			"key": "validData",
+			"value": "true",
+			"type": "string"
 		}
 	]
 }
