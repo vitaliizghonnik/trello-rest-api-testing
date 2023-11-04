@@ -947,8 +947,9 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "789a5f4d-8bcf-4c42-be2e-19e05e655091",
+								"id": "e871349e-2e4b-4750-98f3-ce0a9197b80f",
 								"exec": [
+									"/*\r",
 									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
 									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
 									"if (!bugReportIds) {\r",
@@ -966,7 +967,7 @@
 									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
 									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
 									"console.log(pm.environment.get(\"bugReportIds\"));\r",
-									""
+									"*/"
 								],
 								"type": "text/javascript"
 							}
@@ -974,7 +975,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "53e34718-a130-4fec-a087-5618754eb059",
+								"id": "6925ce9d-8b01-4583-a682-c707917c7887",
 								"exec": [
 									"//Status code of the response\r",
 									"pm.test(\"The checklist has been created successfully\", () => {\r",
@@ -995,6 +996,7 @@
 									"    pm.expect(response.idBoard).to.eql(pm.collectionVariables.get(\"boardId\"));\r",
 									"    pm.expect(response.idCard).to.eql(pm.collectionVariables.get(\"cardId\"));\r",
 									"});\r",
+									"/*\r",
 									"//Retrieving of renewed bugReportIds after request has been sent \r",
 									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
 									"console.log(bugReportIds);\r",
@@ -1005,7 +1007,8 @@
 									"} else {\r",
 									"    postman.setNextRequest(\"Move all cards from To Do list to Doing\");\r",
 									"    console.log(pm.info.requestName);\r",
-									"};"
+									"};\r",
+									"*/"
 								],
 								"type": "text/javascript"
 							}
@@ -1020,16 +1023,17 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"BugReportId\" : \"{{firstBugReportId}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "checklistName",
+									"type": "file",
+									"src": "three_value_BVA_data_to_test_checklist_name.json"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "{{base_url}}/1/cards/:id/checklists?name=Recover steps to reproduce from bug report ID{{firstBugReportId}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
+							"raw": "{{base_url}}/1/cards/:id/checklists?name={&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
 							"host": [
 								"{{base_url}}"
 							],
@@ -1042,7 +1046,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Recover steps to reproduce from bug report ID{{firstBugReportId}}",
+									"value": "{",
 									"description": "The name of the checklist"
 								},
 								{
@@ -1064,8 +1068,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{cardId}}",
-									"description": "REQUIRED. The ID of the Card"
+									"value": ""
 								}
 							]
 						},
