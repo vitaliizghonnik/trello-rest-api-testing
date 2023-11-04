@@ -1026,7 +1026,7 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "checklistName",
+									"key": "{{checklistName}}",
 									"type": "file",
 									"src": "three_value_BVA_data_to_test_checklist_name.json"
 								}
