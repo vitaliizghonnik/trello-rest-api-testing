@@ -945,44 +945,24 @@
 					"name": "Create checklists in the card",
 					"event": [
 						{
-							"listen": "prerequest",
-							"script": {
-								"id": "e871349e-2e4b-4750-98f3-ce0a9197b80f",
-								"exec": [
-									"/*\r",
-									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
-									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
-									"if (!bugReportIds) {\r",
-									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
-									"}\r",
-									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
-									"pm.environment.get(\"bugReportIds\");\r",
-									"console.log(pm.environment.get(\"bugReportIds\"));\r",
-									"//Retrieving first bug report id from array and assigning it to variable\r",
-									"let firstBugReportId = bugReportIds.shift();\r",
-									"console.log(firstBugReportId);\r",
-									"//Setting value of firstBugReportId to collection variable with the same name\r",
-									"pm.environment.set(\"firstBugReportId\", firstBugReportId);\r",
-									"console.log(pm.environment.get(\"firstBugReportId\"));\r",
-									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
-									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
-									"console.log(pm.environment.get(\"bugReportIds\"));\r",
-									"*/"
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
 							"listen": "test",
 							"script": {
-								"id": "6925ce9d-8b01-4583-a682-c707917c7887",
+								"id": "55b4fd01-8d6f-4b68-8d0c-6282bf0190ad",
 								"exec": [
-									"//Status code of the response\r",
-									"pm.test(\"The checklist has been created successfully\", () => {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
 									"//Parse the json format response\r",
 									"const response = pm.response.json(); \r",
+									"//Check status code of the response\r",
+									"if (pm.iterationData.get(\"validData\")) {\r",
+									"pm.test(\"The status code is\" + pm.iterationData.get(\"expectedStatus\"), () => {\r",
+									"    pm.response.to.have.status(pm.iterationData.get(\"expectedStatus\"));\r",
+									"});\r",
+									"} else {\r",
+									"    pm.test(\"Invalid data. Status code is\" + pm.iterationData.get(\"expectedStatus\"), () => {\r",
+									"        pm.expect(response.json).to.be.null;\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"\r",
 									"//Checking an appropriative properties of response body\r",
 									"//Response body is perpesented by nonempty object\r",
 									"pm.test(\"Getting response body is an object and not empty\", () => {\r",
@@ -1012,6 +992,34 @@
 								],
 								"type": "text/javascript"
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b14c750f-3f05-44b3-a1e4-dd768d0ad4e7",
+								"exec": [
+									"/*\r",
+									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
+									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
+									"if (!bugReportIds) {\r",
+									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
+									"}\r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"pm.environment.get(\"bugReportIds\");\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									"//Retrieving first bug report id from array and assigning it to variable\r",
+									"let firstBugReportId = bugReportIds.shift();\r",
+									"console.log(firstBugReportId);\r",
+									"//Setting value of firstBugReportId to collection variable with the same name\r",
+									"pm.environment.set(\"firstBugReportId\", firstBugReportId);\r",
+									"console.log(pm.environment.get(\"firstBugReportId\"));\r",
+									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									"*/"
+								],
+								"type": "text/javascript"
+							}
 						}
 					],
 					"id": "0e96c260-aba6-49b3-9ff8-3344677ee67b",
@@ -1023,16 +1031,17 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"checklistName\" : {{checklistName}}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "checklistName",
+									"type": "file",
+									"src": "three_value_BVA_data_to_test_checklist_name.json"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "{{base_url}}/1/cards/:id/checklists?name=&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
+							"raw": "{{base_url}}/1/cards/:id/checklists?name={{checklistName}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
 							"host": [
 								"{{base_url}}"
 							],
@@ -1045,7 +1054,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "",
+									"value": "{{checklistName}}",
 									"description": "The name of the checklist"
 								},
 								{
@@ -1067,8 +1076,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{cardId}}",
-									"description": "The ID of the Card that the checklist should be added to."
+									"value": ""
 								}
 							]
 						},
