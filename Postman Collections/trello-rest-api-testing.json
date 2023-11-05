@@ -1374,7 +1374,7 @@
 							"script": {
 								"id": "a60b10ff-4bcf-4727-a41f-5c14e12d52a9",
 								"exec": [
-									"\r",
+									"/*\r",
 									"//In order to delete boards which would be stored in newly created collection variable in \"Get all board in Workspace\" request\r",
 									"//in this specific case first send \"Create a new board\" request multiple times to create boards, then sent \"Get all board in Workspace\" request where will be created array with objects that represent boards and signed to allBoardIds collection variable.\r",
 									"//Getting variable allBoardIds and signing array with board's objects to variable allBoardIds\r",
@@ -1389,7 +1389,7 @@
 									"pm.collectionVariables.set(\"currentBoardId\", currentBoardId);\r",
 									"//After collection variable currentBoardId has been used in the request to delete actually this particular board, there is need to setting up allBoardIds collection variable one more time without last remaided belove board \r",
 									"pm.collectionVariables.set(\"allBoardIds\", allBoardIds);\r",
-									""
+									"*/"
 								],
 								"type": "text/javascript"
 							}
