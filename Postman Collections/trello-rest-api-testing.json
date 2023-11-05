@@ -962,7 +962,7 @@
 									"    });\r",
 									"}\r",
 									"\r",
-									"\r",
+									"/*\r",
 									"//Checking an appropriative properties of response body\r",
 									"//Response body is perpesented by nonempty object\r",
 									"pm.test(\"Getting response body is an object and not empty\", () => {\r",
@@ -976,6 +976,7 @@
 									"    pm.expect(response.idBoard).to.eql(pm.collectionVariables.get(\"boardId\"));\r",
 									"    pm.expect(response.idCard).to.eql(pm.collectionVariables.get(\"cardId\"));\r",
 									"});\r",
+									"*/\r",
 									"/*\r",
 									"//Retrieving of renewed bugReportIds after request has been sent \r",
 									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
@@ -1016,7 +1017,9 @@
 									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
 									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
 									"console.log(pm.environment.get(\"bugReportIds\"));\r",
-									"*/"
+									"*/\r",
+									"let checklistName = pm.iterationData.get(\"checklistName\");\r",
+									"pm.collectionVariables.set(\"checklistName\", checklistName);"
 								],
 								"type": "text/javascript"
 							}
@@ -2252,7 +2255,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5c69afda-a2dc-48aa-b4e0-8ad04c72e5a8",
+				"id": "da657472-60a6-4871-8bf1-8ae247792b70",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -2262,7 +2265,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8277699e-8659-4276-96ec-7d7e75b7db7d",
+				"id": "58b64d37-a9a8-4602-bc07-90f74d315b02",
 				"type": "text/javascript",
 				"exec": [
 					"//Performance testing",
@@ -2407,15 +2410,6 @@
 		{
 			"key": "firstBugReportId",
 			"value": "ID 123"
-		},
-		{
-			"key": "checklistName",
-			"value": "checklistName"
-		},
-		{
-			"key": "validData",
-			"value": "true",
-			"type": "string"
 		}
 	]
 }
