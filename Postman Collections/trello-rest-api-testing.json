@@ -1079,7 +1079,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": ""
+									"value": "{{cardId}}",
+									"description": "REQUIRED. The ID of the Card"
 								}
 							]
 						},
