@@ -952,7 +952,7 @@
 									"//Parse the json format response\r",
 									"const response = pm.response.json(); \r",
 									"//Check status code of the response\r",
-									"if (pm.iterationData.get(\"validData\")) {\r",
+									"if (pm.variables.get(\"validData\") == \"true\") {\r",
 									"pm.test(\"The status code is\" + pm.iterationData.get(\"expectedStatus\"), () => {\r",
 									"    pm.response.to.have.status(pm.iterationData.get(\"expectedStatus\"));\r",
 									"});\r",
@@ -2411,6 +2411,10 @@
 		{
 			"key": "firstBugReportId",
 			"value": "ID 123"
+		},
+		{
+			"key": "checklistName",
+			"value": ""
 		}
 	]
 }
