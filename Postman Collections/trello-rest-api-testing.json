@@ -2413,6 +2413,10 @@
 		{
 			"key": "firstBugReportId",
 			"value": "ID 123"
+		},
+		{
+			"key": "checklistName",
+			"value": ""
 		}
 	]
 }
