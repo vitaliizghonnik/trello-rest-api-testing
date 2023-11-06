@@ -1038,7 +1038,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"checklistName\" : {{checklistName}}\r\n}",
+							"raw": "{\r\n    \"checklistName\" : {{checklistName}},\r\n    \"validData\" : {{validData}}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
