@@ -953,11 +953,11 @@
 									"const response = pm.response.json(); \r",
 									"//Check status code of the response\r",
 									"if (pm.variables.get(\"validData\") == \"true\") {\r",
-									"pm.test(\"The status code is\" + pm.iterationData.get(\"expectedStatus\"), () => {\r",
-									"    pm.response.to.have.status(pm.iterationData.get(\"expectedStatus\"));\r",
+									"pm.test(\"The status code is\" + pm.variables.get(\"expectedStatus\"), () => {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"expectedStatus\"));\r",
 									"});\r",
 									"} else {\r",
-									"    pm.test(\"Invalid data. Status code is\" + pm.iterationData.get(\"expectedStatus\"), () => {\r",
+									"    pm.test(\"Invalid data. Status code is\" + pm.variables.get(\"expectedStatus\"), () => {\r",
 									"        pm.expect(response.json).to.be.null;\r",
 									"    });\r",
 									"}\r",
@@ -1018,7 +1018,7 @@
 									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
 									"console.log(pm.environment.get(\"bugReportIds\"));\r",
 									"*/\r",
-									"let checklistName = pm.iterationData.get(\"checklistName\");\r",
+									"let checklistName = pm.variables.get(\"checklistName\");\r",
 									"pm.collectionVariables.set(\"checklistName\", checklistName);"
 								],
 								"type": "text/javascript"
