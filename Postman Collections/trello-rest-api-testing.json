@@ -1018,10 +1018,11 @@
 									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
 									"console.log(pm.environment.get(\"bugReportIds\"));\r",
 									"*/\r",
-									"/*\r",
+									"\r",
 									"let checklistName = pm.variables.get(\"checklistName\");\r",
+									"console.log(checklistName);\r",
 									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
-									"*/"
+									"console.log(pm.collectionVariables.get(\"checklistName\"));"
 								],
 								"type": "text/javascript"
 							}
@@ -1039,7 +1040,7 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "{{checklistName}}",
+									"key": "checklistName",
 									"type": "file",
 									"src": "three_value_BVA_data_to_test_checklist_name.json"
 								}
@@ -2258,7 +2259,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "da657472-60a6-4871-8bf1-8ae247792b70",
+				"id": "e5234ea5-56f3-47db-b562-2affd1e463e7",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -2268,7 +2269,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "58b64d37-a9a8-4602-bc07-90f74d315b02",
+				"id": "9ec2658f-1106-47ce-9bcf-98e122418328",
 				"type": "text/javascript",
 				"exec": [
 					"//Performance testing",
@@ -2413,10 +2414,6 @@
 		{
 			"key": "firstBugReportId",
 			"value": "ID 123"
-		},
-		{
-			"key": "checklistName",
-			"value": ""
 		}
 	]
 }
