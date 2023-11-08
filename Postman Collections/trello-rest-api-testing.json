@@ -1474,6 +1474,102 @@
 										}
 									},
 									"response": []
+								},
+								{
+									"name": "Delete a board",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "a60b10ff-4bcf-4727-a41f-5c14e12d52a9",
+												"exec": [
+													"/*\r",
+													"//In order to delete boards which would be stored in newly created collection variable in \"Get all board in Workspace\" request\r",
+													"//in this specific case first send \"Create a new board\" request multiple times to create boards, then sent \"Get all board in Workspace\" request where will be created array with objects that represent boards and signed to allBoardIds collection variable.\r",
+													"//Getting variable allBoardIds and signing array with board's objects to variable allBoardIds\r",
+													"const allBoardIds = pm.collectionVariables.get(\"allBoardIds\")\r",
+													"//Printing variable in console allBoardIds in debugging aim\r",
+													"console.log(allBoardIds);\r",
+													"//Assigning the last removed and retrieved element from array to variable currentBoardId\r",
+													"let currentBoardId = allBoardIds.pop();\r",
+													"//Printing variable in console allBoardIds in debugging aim\r",
+													"console.log(currentBoardId);\r",
+													"//Setting the varialbe currentBoardId to the collection variable currentBoardId\r",
+													"pm.collectionVariables.set(\"currentBoardId\", currentBoardId);\r",
+													"//After collection variable currentBoardId has been used in the request to delete actually this particular board, there is need to setting up allBoardIds collection variable one more time without last remaided belove board \r",
+													"pm.collectionVariables.set(\"allBoardIds\", allBoardIds);\r",
+													"*/"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "c2e6ba65-3ed7-469e-88b8-a08c8de4ed51",
+												"exec": [
+													"//Testing status code\r",
+													"pm.test(\"Board has been deleted successfully\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+													"});\r",
+													"//Testing response body\r",
+													"pm.test(\"There is not existing board\", () => {\r",
+													"    //Parse the json format response\r",
+													"    const response = pm.response.json();\r",
+													"    pm.expect(response).to.be.an(\"object\");\r",
+													"    pm.expect(response._value).to.be.null;\r",
+													"});\r",
+													"//Redirection to negative testing folder and the request \"Removing deleted board\" to check that deleting the board that has been deleted successfully will be failed\r",
+													"postman.setNextRequest(\"Removing deleted board\");"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "4b3aaab3-761f-4d9c-a8de-4b6406670788",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/1/boards/:id?key={{TrelloKey}}&token={{TrelloToken}}",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"1",
+												"boards",
+												":id"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}",
+													"description": "This is a application key, which Trello uses to identify the application making the request."
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}",
+													"description": "Provide your own Trello token"
+												}
+											],
+											"variable": [
+												{
+													"id": "019848aa-84ed-4c63-94b1-58be6cd47f43",
+													"key": "id",
+													"value": "{{boardId}}",
+													"description": "REQUIRED. Type of data - string. The id of the board represented by sequence of numbers."
+												}
+											]
+										},
+										"description": "There are two ways of using the request \"Delete a board\":\n\n1. The main reason for sending a current request is to delete the board with regard to the collection perspective, deleting the board that was created in the first request for collection called \"Create a new board\"\n    \n\nNOTE: To send this request there is no need to provide any changes. This case is set up as a default.\n\n1. Deleting boards one by one via sending the \"Delete a board\" request multiple times, if occurs the need to delete not just the last created board.\n    \n\nNOTE: Neither doesn't work from a collection perspective or doesn't allow deleting multiple boards at once.\n\nInstruction for the second way of using request the \"Delete a board\":\n\n1. Send the \"Get Boards in an Organization\" request first.\n2. **Scripts in the** _**Pre-request Script**_ **section** are stored as comments are needed **in case if appears necessary to delete boards one by one** that were created before in Workspace. To execute this scenario - **delete the comment signs at the beginning \"/\\*\" and end of comments \"\\*/\" in Pre-request Script section**.\n3. Go to the the Params section subsection Path Variables and change in value's field of id from \"boardId\" to \"currentBoardId\".\n4. Send \"Delete a board\" as much time as it's needed. Until now, there are currently no boards in the Workspace when last board has been deleted. Getting status code 400 Bad Request and response body with following context \"invalid id\""
+									},
+									"response": []
 								}
 							],
 							"id": "2258ac39-45d7-49ab-a16a-a09ccfce784b",
@@ -1599,6 +1695,102 @@
 												}
 											]
 										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete a board Copy 2",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "a60b10ff-4bcf-4727-a41f-5c14e12d52a9",
+												"exec": [
+													"/*\r",
+													"//In order to delete boards which would be stored in newly created collection variable in \"Get all board in Workspace\" request\r",
+													"//in this specific case first send \"Create a new board\" request multiple times to create boards, then sent \"Get all board in Workspace\" request where will be created array with objects that represent boards and signed to allBoardIds collection variable.\r",
+													"//Getting variable allBoardIds and signing array with board's objects to variable allBoardIds\r",
+													"const allBoardIds = pm.collectionVariables.get(\"allBoardIds\")\r",
+													"//Printing variable in console allBoardIds in debugging aim\r",
+													"console.log(allBoardIds);\r",
+													"//Assigning the last removed and retrieved element from array to variable currentBoardId\r",
+													"let currentBoardId = allBoardIds.pop();\r",
+													"//Printing variable in console allBoardIds in debugging aim\r",
+													"console.log(currentBoardId);\r",
+													"//Setting the varialbe currentBoardId to the collection variable currentBoardId\r",
+													"pm.collectionVariables.set(\"currentBoardId\", currentBoardId);\r",
+													"//After collection variable currentBoardId has been used in the request to delete actually this particular board, there is need to setting up allBoardIds collection variable one more time without last remaided belove board \r",
+													"pm.collectionVariables.set(\"allBoardIds\", allBoardIds);\r",
+													"*/"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "c2e6ba65-3ed7-469e-88b8-a08c8de4ed51",
+												"exec": [
+													"//Testing status code\r",
+													"pm.test(\"Board has been deleted successfully\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+													"});\r",
+													"//Testing response body\r",
+													"pm.test(\"There is not existing board\", () => {\r",
+													"    //Parse the json format response\r",
+													"    const response = pm.response.json();\r",
+													"    pm.expect(response).to.be.an(\"object\");\r",
+													"    pm.expect(response._value).to.be.null;\r",
+													"});\r",
+													"//Redirection to negative testing folder and the request \"Removing deleted board\" to check that deleting the board that has been deleted successfully will be failed\r",
+													"postman.setNextRequest(\"Removing deleted board\");"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "a3f3f464-75e1-4444-9c90-9f56931fbeaa",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/1/boards/:id?key={{TrelloKey}}&token={{TrelloToken}}",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"1",
+												"boards",
+												":id"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}",
+													"description": "This is a application key, which Trello uses to identify the application making the request."
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}",
+													"description": "Provide your own Trello token"
+												}
+											],
+											"variable": [
+												{
+													"id": "019848aa-84ed-4c63-94b1-58be6cd47f43",
+													"key": "id",
+													"value": "{{boardId}}",
+													"description": "REQUIRED. Type of data - string. The id of the board represented by sequence of numbers."
+												}
+											]
+										},
+										"description": "There are two ways of using the request \"Delete a board\":\n\n1. The main reason for sending a current request is to delete the board with regard to the collection perspective, deleting the board that was created in the first request for collection called \"Create a new board\"\n    \n\nNOTE: To send this request there is no need to provide any changes. This case is set up as a default.\n\n1. Deleting boards one by one via sending the \"Delete a board\" request multiple times, if occurs the need to delete not just the last created board.\n    \n\nNOTE: Neither doesn't work from a collection perspective or doesn't allow deleting multiple boards at once.\n\nInstruction for the second way of using request the \"Delete a board\":\n\n1. Send the \"Get Boards in an Organization\" request first.\n2. **Scripts in the** _**Pre-request Script**_ **section** are stored as comments are needed **in case if appears necessary to delete boards one by one** that were created before in Workspace. To execute this scenario - **delete the comment signs at the beginning \"/\\*\" and end of comments \"\\*/\" in Pre-request Script section**.\n3. Go to the the Params section subsection Path Variables and change in value's field of id from \"boardId\" to \"currentBoardId\".\n4. Send \"Delete a board\" as much time as it's needed. Until now, there are currently no boards in the Workspace when last board has been deleted. Getting status code 400 Bad Request and response body with following context \"invalid id\""
 									},
 									"response": []
 								}
