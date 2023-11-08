@@ -1231,7 +1231,7 @@
 								"id": "a60b10ff-4bcf-4727-a41f-5c14e12d52a9",
 								"exec": [
 									"/*\r",
-									"//In order to delete boards which would be stored in newly created collection variable in \"Get all board in Workspace\" request\r",
+									"//In order to delete boards which would be stored in newly created collection variable in the \"Get all board in Workspace\" request\r",
 									"//in this specific case first send \"Create a new board\" request multiple times to create boards, then sent \"Get all board in Workspace\" request where will be created array with objects that represent boards and signed to allBoardIds collection variable.\r",
 									"//Getting variable allBoardIds and signing array with board's objects to variable allBoardIds\r",
 									"const allBoardIds = pm.collectionVariables.get(\"allBoardIds\")\r",
