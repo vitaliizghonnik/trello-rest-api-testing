@@ -865,7 +865,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c49e93d1-92fd-4ee8-8a84-29fe98f08db7",
+								"id": "e4f48f2e-0bc9-4b8b-b4cc-4e88c0dd09db",
 								"exec": [
 									"//Testing status code\r",
 									"pm.test(\"Data about added member to the card has been successful retrieved, Status code is 200\", () => {\r",
@@ -890,7 +890,9 @@
 									"    pm.expect(memberData.username).to.be.a(\"string\");\r",
 									"    pm.expect(memberData.activityBlocked).to.eql(false);\r",
 									"    pm.expect(memberData.avatarUrl).to.include(\"https://trello-members.s3.amazonaws.com/\");\r",
-									"});"
+									"});\r",
+									"//Set next request \"Create checklists in the card\" from \"Data Driven Testing\" folder\r",
+									"postman.setNextRequest(\"Create checklists in the card\");"
 								],
 								"type": "text/javascript"
 							}
@@ -2107,7 +2109,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7d624c9a-31cf-42ff-b8b9-ab9aafdc4751",
+								"id": "07994818-2080-48ce-9218-04dd633c7c16",
 								"exec": [
 									"//Check status code of the response\r",
 									"if (pm.variables.get(\"validData\") == \"true\") {\r",
@@ -2128,12 +2130,33 @@
 									"        pm.expect(response).to.be.an(\"object\");\r",
 									"        pm.expect(Object.keys(response)).to.not.be.empty;\r",
 									"    });\r",
+									"//Checking that a response header is present\r",
+									"    pm.test(\"Content-Type is present\", () => {\r",
+									"        pm.response.to.have.header(\"Content-Type\");\r",
+									"    });\r",
+									"//Checking that Content-Type header has a particular value\r",
+									"    pm.test(\"Content-Type header is a application/json\", () => {\r",
+									"        pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"    });\r",
+									"//Checking that Trello-Environment header is a \"Production\"\r",
+									"    pm.test(\"X-Trello-Environment header is a Production\", () => {\r",
+									"    pm.expect(pm.response.headers.get('X-Trello-Environment')).to.eql('Production');\r",
+									"    });\r",
+									"//Testing cookie \"preAuthProps\" is exist \r",
+									"    pm.test(\"Cookie preAuthProps is present\", () => {\r",
+									"        pm.expect(pm.cookies.has('preAuthProps')).to.be.true;\r",
+									"    });\r",
 									"});\r",
 									"} else {\r",
 									"    pm.test(\"Invalid data. Status code is \" + pm.variables.get(\"expectedStatus\"), () => {\r",
 									"        pm.response.to.have.status(400);\r",
 									"    });\r",
-									"};\r",
+									"//Checking that Content-Type header has a particular value\r",
+									"    pm.test(\"Content-Type header is a application/json\", () => {\r",
+									"        pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"text/plain\");\r",
+									"});\r",
+									"//Set next request \"Move all cards from To Do list to Doing\" from \"Happy path testing\" folder\r",
+									"postman.setNextRequest(\"Move all cards from To Do list to Doing\");\r",
 									"/*\r",
 									"//Retrieving of renewed bugReportIds after request has been sent \r",
 									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
@@ -2154,7 +2177,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "60a785be-d484-4ec3-a77a-7ec3dbda63ae",
+								"id": "d4c97b19-5e7a-40b5-bb4d-f552afbf331f",
 								"exec": [
 									"/*\r",
 									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
