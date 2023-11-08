@@ -2010,7 +2010,9 @@
 									"//Testing response body\r",
 									"pm.test(\"The response body represents a message about not existed requested to deleted board\", () => {\r",
 									"    pm.response.to.have.body(\"The requested resource was not found.\")\r",
-									"});"
+									"});\r",
+									"//This is a last running request from this collection, therefore there is needs to set next request a 'null' as a value\r",
+									"postman.setNextRequest(null);"
 								],
 								"type": "text/javascript"
 							}
