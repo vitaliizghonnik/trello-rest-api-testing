@@ -942,152 +942,6 @@
 					"response": []
 				},
 				{
-					"name": "Create checklists in the card",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "7d624c9a-31cf-42ff-b8b9-ab9aafdc4751",
-								"exec": [
-									"//Check status code of the response\r",
-									"if (pm.variables.get(\"validData\") == \"true\") {\r",
-									"    pm.test(\"The status code is \" + pm.variables.get(\"expectedStatus\"), () => {\r",
-									"        pm.response.to.have.status(200);\r",
-									"//Checking that properties of checklist is accurate and checklist is created in the expected card and the board as well\r",
-									"    pm.test(\"Properties of created checklist is appropriate\", () => {\r",
-									"        //Parse the json format response\r",
-									"        const response = pm.response.json(); \r",
-									"        pm.expect(response.id).to.be.not.empty;\r",
-									"        pm.expect(response.name).to.be.a(\"string\");\r",
-									"        pm.expect(response.idBoard).to.eql(pm.collectionVariables.get(\"boardId\"));\r",
-									"        pm.expect(response.idCard).to.eql(pm.collectionVariables.get(\"cardId\"));\r",
-									"    });\r",
-									"//Checking an appropriative properties of response body\r",
-									"//Response body is perpesented by nonempty object\r",
-									"    pm.test(\"Getting response body is an object and not empty\", () => {\r",
-									"        pm.expect(response).to.be.an(\"object\");\r",
-									"        pm.expect(Object.keys(response)).to.not.be.empty;\r",
-									"    });\r",
-									"});\r",
-									"} else {\r",
-									"    pm.test(\"Invalid data. Status code is \" + pm.variables.get(\"expectedStatus\"), () => {\r",
-									"        pm.response.to.have.status(400);\r",
-									"    });\r",
-									"};\r",
-									"/*\r",
-									"//Retrieving of renewed bugReportIds after request has been sent \r",
-									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
-									"console.log(bugReportIds);\r",
-									"//If-else statement does the function of executing creating checklists untill the variable bugReportIds will not have an id\r",
-									"if(bugReportIds && bugReportIds.length > 0) {\r",
-									"    postman.setNextRequest(\"Create checklists in the card\");\r",
-									"    console.log(pm.info.requestName);\r",
-									"} else {\r",
-									"    postman.setNextRequest(\"Move all cards from To Do list to Doing\");\r",
-									"    console.log(pm.info.requestName);\r",
-									"};\r",
-									"*/"
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "60a785be-d484-4ec3-a77a-7ec3dbda63ae",
-								"exec": [
-									"/*\r",
-									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
-									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
-									"if (!bugReportIds) {\r",
-									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
-									"}\r",
-									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
-									"pm.environment.get(\"bugReportIds\");\r",
-									"console.log(pm.environment.get(\"bugReportIds\"));\r",
-									"//Retrieving first bug report id from array and assigning it to variable\r",
-									"let firstBugReportId = bugReportIds.shift();\r",
-									"console.log(firstBugReportId);\r",
-									"//Setting value of firstBugReportId to collection variable with the same name\r",
-									"pm.environment.set(\"firstBugReportId\", firstBugReportId);\r",
-									"console.log(pm.environment.get(\"firstBugReportId\"));\r",
-									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
-									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
-									"console.log(pm.environment.get(\"bugReportIds\"));\r",
-									"*/\r",
-									"\r",
-									"let checklistName = pm.variables.get(\"checklistName\");\r",
-									"console.log(checklistName);\r",
-									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
-									"console.log(pm.collectionVariables.get(\"checklistName\"));"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "0e96c260-aba6-49b3-9ff8-3344677ee67b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true,
-						"disabledSystemHeaders": {}
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"checklistName\" : {{checklistName}},\r\n    \"validData\" : {{validData}}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/1/cards/:id/checklists?name={{checklistName}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"1",
-								"cards",
-								":id",
-								"checklists"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "{{checklistName}}",
-									"description": "The name of the checklist"
-								},
-								{
-									"key": "pos",
-									"value": "top",
-									"description": "The position of the checklist on the card. One of: top, bottom, or a positive number."
-								},
-								{
-									"key": "token",
-									"value": "{{TrelloToken}}",
-									"description": "Trello's API uses token - based authentication to grant third-party applications access to the Trello API."
-								},
-								{
-									"key": "key",
-									"value": "{{TrelloKey}}",
-									"description": "This is a application key, which Trello uses to identify the application making the request."
-								}
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "{{cardId}}",
-									"description": "REQUIRED. The ID of the Card"
-								}
-							]
-						},
-						"description": "This request is supposed to create a checklist by using an external data file on a card. The main idea of proceeding with external file is IDs."
-					},
-					"response": []
-				},
-				{
 					"name": "Move all cards from To Do list to Doing",
 					"event": [
 						{
@@ -2243,6 +2097,158 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Data Driven Testing",
+			"item": [
+				{
+					"name": "Create checklists in the card",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d624c9a-31cf-42ff-b8b9-ab9aafdc4751",
+								"exec": [
+									"//Check status code of the response\r",
+									"if (pm.variables.get(\"validData\") == \"true\") {\r",
+									"    pm.test(\"The status code is \" + pm.variables.get(\"expectedStatus\"), () => {\r",
+									"        pm.response.to.have.status(200);\r",
+									"//Checking that properties of checklist is accurate and checklist is created in the expected card and the board as well\r",
+									"    pm.test(\"Properties of created checklist is appropriate\", () => {\r",
+									"        //Parse the json format response\r",
+									"        const response = pm.response.json(); \r",
+									"        pm.expect(response.id).to.be.not.empty;\r",
+									"        pm.expect(response.name).to.be.a(\"string\");\r",
+									"        pm.expect(response.idBoard).to.eql(pm.collectionVariables.get(\"boardId\"));\r",
+									"        pm.expect(response.idCard).to.eql(pm.collectionVariables.get(\"cardId\"));\r",
+									"    });\r",
+									"//Checking an appropriative properties of response body\r",
+									"//Response body is perpesented by nonempty object\r",
+									"    pm.test(\"Getting response body is an object and not empty\", () => {\r",
+									"        pm.expect(response).to.be.an(\"object\");\r",
+									"        pm.expect(Object.keys(response)).to.not.be.empty;\r",
+									"    });\r",
+									"});\r",
+									"} else {\r",
+									"    pm.test(\"Invalid data. Status code is \" + pm.variables.get(\"expectedStatus\"), () => {\r",
+									"        pm.response.to.have.status(400);\r",
+									"    });\r",
+									"};\r",
+									"/*\r",
+									"//Retrieving of renewed bugReportIds after request has been sent \r",
+									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
+									"console.log(bugReportIds);\r",
+									"//If-else statement does the function of executing creating checklists untill the variable bugReportIds will not have an id\r",
+									"if(bugReportIds && bugReportIds.length > 0) {\r",
+									"    postman.setNextRequest(\"Create checklists in the card\");\r",
+									"    console.log(pm.info.requestName);\r",
+									"} else {\r",
+									"    postman.setNextRequest(\"Move all cards from To Do list to Doing\");\r",
+									"    console.log(pm.info.requestName);\r",
+									"};\r",
+									"*/"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "60a785be-d484-4ec3-a77a-7ec3dbda63ae",
+								"exec": [
+									"/*\r",
+									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
+									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
+									"if (!bugReportIds) {\r",
+									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
+									"}\r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"pm.environment.get(\"bugReportIds\");\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									"//Retrieving first bug report id from array and assigning it to variable\r",
+									"let firstBugReportId = bugReportIds.shift();\r",
+									"console.log(firstBugReportId);\r",
+									"//Setting value of firstBugReportId to collection variable with the same name\r",
+									"pm.environment.set(\"firstBugReportId\", firstBugReportId);\r",
+									"console.log(pm.environment.get(\"firstBugReportId\"));\r",
+									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									"*/\r",
+									"\r",
+									"let checklistName = pm.variables.get(\"checklistName\");\r",
+									"console.log(checklistName);\r",
+									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
+									"console.log(pm.collectionVariables.get(\"checklistName\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0e96c260-aba6-49b3-9ff8-3344677ee67b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"checklistName\" : {{checklistName}},\r\n    \"validData\" : {{validData}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/1/cards/:id/checklists?name={{checklistName}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"1",
+								"cards",
+								":id",
+								"checklists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "{{checklistName}}",
+									"description": "The name of the checklist"
+								},
+								{
+									"key": "pos",
+									"value": "top",
+									"description": "The position of the checklist on the card. One of: top, bottom, or a positive number."
+								},
+								{
+									"key": "token",
+									"value": "{{TrelloToken}}",
+									"description": "Trello's API uses token - based authentication to grant third-party applications access to the Trello API."
+								},
+								{
+									"key": "key",
+									"value": "{{TrelloKey}}",
+									"description": "This is a application key, which Trello uses to identify the application making the request."
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{cardId}}",
+									"description": "REQUIRED. The ID of the Card"
+								}
+							]
+						},
+						"description": "This request is supposed to create a checklist by using an external data file on a card. The main idea of proceeding with external file is IDs."
+					},
+					"response": []
+				}
+			],
+			"id": "21239659-8702-47cf-8473-b3ec9f559ce1"
 		}
 	],
 	"auth": {
