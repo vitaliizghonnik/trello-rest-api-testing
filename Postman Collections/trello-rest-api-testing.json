@@ -2115,8 +2115,10 @@
 								"exec": [
 									"//Check status code of the response\r",
 									"if (pm.variables.get(\"validData\") == \"true\") {\r",
+									"    console.log(pm.variables.get(\"validData\"));\r",
 									"    pm.test(\"The status code is \" + pm.variables.get(\"expectedStatus\"), () => {\r",
 									"        pm.response.to.have.status(parseInt(pm.variables.get(\"expectedStatus\")));\r",
+									"        console.log(parseInt(pm.variables.get(\"expectedStatus\")));\r",
 									"//Checking that properties of checklist is accurate and checklist is created in the expected card and the board as well\r",
 									"    pm.test(\"Properties of created checklist is appropriate\", () => {\r",
 									"        //Parse the json format response\r",
