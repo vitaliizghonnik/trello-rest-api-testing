@@ -2245,21 +2245,25 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/1/cards/:id/checklists?name={{checklistName}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
+							"raw": "{{base_url}}/1/checklists?idCard={{cardId}}&name={{checklistName}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"1",
-								"cards",
-								":id",
 								"checklists"
 							],
 							"query": [
 								{
+									"key": "idCard",
+									"value": "{{cardId}}",
+									"description": "The ID of the Card that the checklist should be added to."
+								},
+								{
 									"key": "name",
 									"value": "{{checklistName}}",
-									"description": "The name of the checklist"
+									"description": "The name of the checklist. Should be a string of length 1 to 16384.\nMin length: 1\nMax length: 16384",
+									"type": "text"
 								},
 								{
 									"key": "pos",
@@ -2275,13 +2279,6 @@
 									"key": "key",
 									"value": "{{TrelloKey}}",
 									"description": "This is a application key, which Trello uses to identify the application making the request."
-								}
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "{{cardId}}",
-									"description": "REQUIRED. The ID of the Card"
 								}
 							]
 						},
