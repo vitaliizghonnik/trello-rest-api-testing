@@ -2159,7 +2159,7 @@
 									"console.log(pm.variables.get(\"validData\"));\r",
 									"console.log(parseInt(pm.variables.get(\"expectedStatus\")));\r",
 									"//Check status code of the response\r",
-									"if (pm.variables.get(\"validData\") == \"true\") {\r",
+									"if (pm.variables.get(\"validData\") === true) {\r",
 									"    pm.test(\"The status code is \" + pm.variables.get(\"expectedStatus\"), () => {\r",
 									"        pm.response.to.have.status(parseInt(pm.variables.get(\"expectedStatus\")));\r",
 									"//Checking that properties of checklist is accurate and checklist is created in the expected card and the board as well\r",
