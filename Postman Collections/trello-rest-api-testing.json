@@ -2113,7 +2113,12 @@
 							"script": {
 								"id": "c1de7383-9d38-4b7f-9461-b90e91ceb27b",
 								"exec": [
-									"\r",
+									"if (pm.variables.get(\"validData\") == \"true\" && pm.variables.get(\"checklistName\").lenght > 10) {\r",
+									"    let checklistName = \"a\".repeat(16383)\r",
+									"    pm.collectionVariables.set(\"checklistName\", checklistName)\r",
+									"} else {\r",
+									"    checklistName = pm.variables.get(\"checklistName\")\r",
+									"}\r",
 									"/*\r",
 									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
 									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
