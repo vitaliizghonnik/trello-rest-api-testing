@@ -2109,9 +2109,43 @@
 					"name": "Create checklists in the card",
 					"event": [
 						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c1de7383-9d38-4b7f-9461-b90e91ceb27b",
+								"exec": [
+									"\r",
+									"/*\r",
+									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
+									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
+									"if (!bugReportIds) {\r",
+									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
+									"}\r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"pm.environment.get(\"bugReportIds\");\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									"//Retrieving first bug report id from array and assigning it to variable\r",
+									"let firstBugReportId = bugReportIds.shift();\r",
+									"console.log(firstBugReportId);\r",
+									"//Setting value of firstBugReportId to collection variable with the same name\r",
+									"pm.environment.set(\"firstBugReportId\", firstBugReportId);\r",
+									"console.log(pm.environment.get(\"firstBugReportId\"));\r",
+									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									"*/\r",
+									"\r",
+									"let checklistName = pm.variables.get(\"checklistName\");\r",
+									"console.log(checklistName);\r",
+									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
+									"console.log(pm.collectionVariables.get(\"checklistName\"));"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
 							"listen": "test",
 							"script": {
-								"id": "07994818-2080-48ce-9218-04dd633c7c16",
+								"id": "053510f0-cdb5-4c3d-9d2e-7003b7860270",
 								"exec": [
 									"console.log(pm.variables.get(\"validData\"));\r",
 									"console.log(parseInt(pm.variables.get(\"expectedStatus\")));\r",
@@ -2157,7 +2191,7 @@
 									"});\r",
 									"} else {\r",
 									"    pm.test(\"Invalid data. Status code is \" + pm.variables.get(\"expectedStatus\"), () => {\r",
-									"        pm.response.to.have.status((pm.variables.get(\"expectedStatus\")));\r",
+									"        pm.response.to.have.status(parseInt(pm.variables.get(\"expectedStatus\")));\r",
 									"    });\r",
 									"//Checking that Content-Type header has a particular value\r",
 									"    pm.test(\"Content-Type header is text/plain\", () => {\r",
@@ -2179,39 +2213,6 @@
 									"    console.log(pm.info.requestName);\r",
 									"};\r",
 									"*/"
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "d4c97b19-5e7a-40b5-bb4d-f552afbf331f",
-								"exec": [
-									"/*\r",
-									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
-									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
-									"if (!bugReportIds) {\r",
-									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
-									"}\r",
-									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
-									"pm.environment.get(\"bugReportIds\");\r",
-									"console.log(pm.environment.get(\"bugReportIds\"));\r",
-									"//Retrieving first bug report id from array and assigning it to variable\r",
-									"let firstBugReportId = bugReportIds.shift();\r",
-									"console.log(firstBugReportId);\r",
-									"//Setting value of firstBugReportId to collection variable with the same name\r",
-									"pm.environment.set(\"firstBugReportId\", firstBugReportId);\r",
-									"console.log(pm.environment.get(\"firstBugReportId\"));\r",
-									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
-									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
-									"console.log(pm.environment.get(\"bugReportIds\"));\r",
-									"*/\r",
-									"\r",
-									"let checklistName = pm.variables.get(\"checklistName\");\r",
-									"console.log(checklistName);\r",
-									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
-									"console.log(pm.collectionVariables.get(\"checklistName\"));"
 								],
 								"type": "text/javascript"
 							}
