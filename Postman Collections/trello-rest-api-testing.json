@@ -2113,7 +2113,7 @@
 							"script": {
 								"id": "c1de7383-9d38-4b7f-9461-b90e91ceb27b",
 								"exec": [
-									"let checklistName = pm.variables.get(\"checklistName\");\r",
+									"/*let checklistName = pm.variables.get(\"checklistName\");\r",
 									"if (checklistName.length === 5) {\r",
 									"    checklistName = \"a\".repeat(16383);\r",
 									"} else if ((parseInt(checklistName.length)) === 16384) {\r",
@@ -2122,6 +2122,7 @@
 									"    checklistName = \"a\".repeat(16385);\r",
 									"}\r",
 									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
+									"*/\r",
 									"/*\r",
 									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
 									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
@@ -2141,12 +2142,12 @@
 									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
 									"console.log(pm.environment.get(\"bugReportIds\"));\r",
 									"*/\r",
-									"/*\r",
+									"\r",
 									"let checklistName = pm.variables.get(\"checklistName\");\r",
 									"console.log(checklistName);\r",
 									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
 									"console.log(pm.collectionVariables.get(\"checklistName\"));\r",
-									"*/"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -2262,8 +2263,7 @@
 								{
 									"key": "name",
 									"value": "{{checklistName}}",
-									"description": "The name of the checklist. Should be a string of length 1 to 16384.\nMin length: 1\nMax length: 16384",
-									"type": "text"
+									"description": "The name of the checklist. Should be a string of length 1 to 16384.\nMin length: 1\nMax length: 16384"
 								},
 								{
 									"key": "pos",
