@@ -2111,7 +2111,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2a42af03-65e2-480c-826c-1af7b70a5c23",
+								"id": "8b3908fa-73fa-4475-a21d-34daf0a5d7cd",
 								"exec": [
 									"console.log(pm.variables.get(\"validData\"));\r",
 									"console.log(parseInt(pm.variables.get(\"expectedStatus\")));\r",
@@ -2186,7 +2186,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "84cb9b10-ed28-4916-9db8-092778f3e1d9",
+								"id": "88fd8b2d-8451-478e-b49d-515ce693ba99",
 								"exec": [
 									"/*let checklistName = pm.variables.get(\"checklistName\");\r",
 									"if (checklistName.length === 5) {\r",
@@ -2331,12 +2331,12 @@
 	],
 	"variable": [
 		{
-			"id": "1a4ff085-57cb-4a1b-a9b0-6f2f91d0190d",
+			"id": "793555ba-15f7-4e62-96bb-10b2cb8744e5",
 			"key": "base_url",
 			"value": "https://api.trello.com"
 		},
 		{
-			"id": "b922556a-bf47-40f9-adc5-72f418ed5dd7",
+			"id": "f4b76d34-22a3-4e1f-9d86-b26dcde5eb07",
 			"key": "toolIds",
 			"value": [
 				"64c89939feb6a4ab6eedf4a3",
@@ -2373,27 +2373,27 @@
 			]
 		},
 		{
-			"id": "7c4eaa09-bd6e-4ede-b43f-43643445132d",
+			"id": "913c8311-7203-4007-92d9-54a2e767d0a3",
 			"key": "currentToolId",
 			"value": "64c89939feb6a4ab6eedf4a3"
 		},
 		{
-			"id": "8a5e704c-050a-48db-a900-a0c03d03e446",
+			"id": "aa81a582-441e-488d-b1bd-7b1965d265bf",
 			"key": "ToDoListId",
 			"value": "6545d980404e4a17ca755312"
 		},
 		{
-			"id": "cb36556a-14d4-4be4-b921-af2133b13987",
+			"id": "4d05aa7a-6ea5-408d-8d23-fff71db6d044",
 			"key": "DoingListId",
 			"value": "6545d980404e4a17ca755313"
 		},
 		{
-			"id": "fe95f2d2-6a9e-4d80-a910-b891fa7577ad",
+			"id": "241a1da3-b10c-4c8e-be38-14a95b779be6",
 			"key": "DoneListId",
 			"value": "6545d980404e4a17ca755314"
 		},
 		{
-			"id": "f7679f04-3edd-4111-b704-8fdf43338921",
+			"id": "62270653-f26e-4eee-88d5-d73de24cb999",
 			"key": "allBoardIds",
 			"value": [
 				"6541d7fba9bef02ec00c3022",
@@ -2419,58 +2419,58 @@
 			]
 		},
 		{
-			"id": "a873fae8-0121-4e01-b21b-6e3a95a2155e",
+			"id": "b3e12a38-23a7-4031-bbe4-b3bd26b7807a",
 			"key": "memberId",
 			"value": "61f6a14321c5f77bed29eaa1"
 		},
 		{
-			"id": "5eea37dd-7312-4eec-863a-c30f0917d920",
+			"id": "70962559-7615-48af-ba00-8b590d02a1a0",
 			"key": "currentBoardId",
 			"value": "6541d85521ab1143fe72a0c8"
 		},
 		{
-			"id": "5aab67b3-31fd-40de-ac80-d95996b09e04",
+			"id": "9e1567df-0e22-40ff-9e3c-6ab54f111b90",
 			"key": "listDoneID",
 			"value": "64cf66c2f2d3306074dbe86a"
 		},
 		{
-			"id": "8fc82b70-4161-4006-ab7e-f9f5d42dc542",
+			"id": "3b5b4d08-6ed3-40ea-af5d-5cd060e3faaf",
 			"key": "listDelayId",
 			"value": "6545d982a0886d59f25f1a6f"
 		},
 		{
-			"id": "a95412f8-3955-459d-b5e6-f2a02ec6f016",
+			"id": "3d7163f3-f8e5-4c22-a3e7-cea108619b42",
 			"key": "cardId",
 			"value": "6545d982f9ebf59a509bb511"
 		},
 		{
-			"id": "fde9fd6c-8223-4245-a117-ed1918d09b9e",
+			"id": "ed792d3e-4bf4-4f64-b70b-93f91fd09df1",
 			"key": "boardId",
 			"value": ""
 		},
 		{
-			"id": "7a7ceea7-702b-4f00-bcd6-f1eee8449353",
+			"id": "5d409a89-51a4-4b7d-a7e7-785739f3e923",
 			"key": "boardNumber",
 			"value": 1
 		},
 		{
-			"id": "b2262ae7-755f-45c8-9bbd-618041ecb943",
+			"id": "89d49443-0afa-48a7-af5f-f14ba4d5674e",
 			"key": "boardName",
 			"value": ""
 		},
 		{
-			"id": "b09a738f-1bd0-4b00-88d5-deb0795791ba",
+			"id": "da86addf-1980-4722-a281-fc148d72892f",
 			"key": "idOrganization",
 			"value": "e0590645-7180-42c7-8f9c-5359fdf197a4",
 			"type": "string"
 		},
 		{
-			"id": "83dfb277-f961-4598-afe3-f43630ea37b5",
+			"id": "39bfd213-fae9-4a44-9caa-5762f9b64683",
 			"key": "userNameOfTheMember",
 			"value": "vitaliizghonnik"
 		},
 		{
-			"id": "dcebb5be-4fa4-4a1c-83c4-bd30ce214e8e",
+			"id": "9498c214-5f34-4547-90e0-1dd51648a654",
 			"key": "bugReportIds",
 			"value": [
 				"ID 373",
@@ -2479,12 +2479,12 @@
 			]
 		},
 		{
-			"id": "435e9597-d58e-442e-9327-2ddd5992b590",
+			"id": "a4abfaa7-e889-4879-a451-2084691694ef",
 			"key": "firstBugReportId",
 			"value": "ID 123"
 		},
 		{
-			"id": "39ddc040-455a-4b5a-8fed-484a872f950f",
+			"id": "aa07cfad-0079-44ca-93f7-fe137a93d9cc",
 			"key": "checklistName",
 			"value": ""
 		}
