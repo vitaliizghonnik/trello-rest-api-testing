@@ -2109,53 +2109,9 @@
 					"name": "Create checklists in the card",
 					"event": [
 						{
-							"listen": "prerequest",
-							"script": {
-								"id": "c1de7383-9d38-4b7f-9461-b90e91ceb27b",
-								"exec": [
-									"/*let checklistName = pm.variables.get(\"checklistName\");\r",
-									"if (checklistName.length === 5) {\r",
-									"    checklistName = \"a\".repeat(16383);\r",
-									"} else if ((parseInt(checklistName.length)) === 16384) {\r",
-									"    checklistName = \"a\".repeat(16384);\r",
-									"} else if ((parseInt(checklistName.length)) === 16385) {\r",
-									"    checklistName = \"a\".repeat(16385);\r",
-									"}\r",
-									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
-									"*/\r",
-									"/*\r",
-									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
-									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
-									"if (!bugReportIds) {\r",
-									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
-									"}\r",
-									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
-									"pm.environment.get(\"bugReportIds\");\r",
-									"console.log(pm.environment.get(\"bugReportIds\"));\r",
-									"//Retrieving first bug report id from array and assigning it to variable\r",
-									"let firstBugReportId = bugReportIds.shift();\r",
-									"console.log(firstBugReportId);\r",
-									"//Setting value of firstBugReportId to collection variable with the same name\r",
-									"pm.environment.set(\"firstBugReportId\", firstBugReportId);\r",
-									"console.log(pm.environment.get(\"firstBugReportId\"));\r",
-									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
-									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
-									"console.log(pm.environment.get(\"bugReportIds\"));\r",
-									"*/\r",
-									"\r",
-									"let checklistName = pm.variables.get(\"checklistName\");\r",
-									"console.log(checklistName);\r",
-									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
-									"console.log(pm.collectionVariables.get(\"checklistName\"));\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
 							"listen": "test",
 							"script": {
-								"id": "053510f0-cdb5-4c3d-9d2e-7003b7860270",
+								"id": "2a42af03-65e2-480c-826c-1af7b70a5c23",
 								"exec": [
 									"console.log(pm.variables.get(\"validData\"));\r",
 									"console.log(parseInt(pm.variables.get(\"expectedStatus\")));\r",
@@ -2223,6 +2179,50 @@
 									"    console.log(pm.info.requestName);\r",
 									"};\r",
 									"*/"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "84cb9b10-ed28-4916-9db8-092778f3e1d9",
+								"exec": [
+									"/*let checklistName = pm.variables.get(\"checklistName\");\r",
+									"if (checklistName.length === 5) {\r",
+									"    checklistName = \"a\".repeat(16383);\r",
+									"} else if ((parseInt(checklistName.length)) === 16384) {\r",
+									"    checklistName = \"a\".repeat(16384);\r",
+									"} else if ((parseInt(checklistName.length)) === 16385) {\r",
+									"    checklistName = \"a\".repeat(16385);\r",
+									"}\r",
+									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
+									"*/\r",
+									"/*\r",
+									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
+									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
+									"if (!bugReportIds) {\r",
+									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
+									"}\r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"pm.environment.get(\"bugReportIds\");\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									"//Retrieving first bug report id from array and assigning it to variable\r",
+									"let firstBugReportId = bugReportIds.shift();\r",
+									"console.log(firstBugReportId);\r",
+									"//Setting value of firstBugReportId to collection variable with the same name\r",
+									"pm.environment.set(\"firstBugReportId\", firstBugReportId);\r",
+									"console.log(pm.environment.get(\"firstBugReportId\"));\r",
+									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									"*/\r",
+									"\r",
+									"let checklistName = pm.variables.get(\"checklistName\");\r",
+									"console.log(checklistName);\r",
+									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
+									"console.log(pm.collectionVariables.get(\"checklistName\"));\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -2331,12 +2331,12 @@
 	],
 	"variable": [
 		{
-			"id": "2c8dcbe7-d44a-45fb-b8d9-3f760388b1e2",
+			"id": "1a4ff085-57cb-4a1b-a9b0-6f2f91d0190d",
 			"key": "base_url",
 			"value": "https://api.trello.com"
 		},
 		{
-			"id": "20529a41-51a7-46ee-a9b0-add84064ff4d",
+			"id": "b922556a-bf47-40f9-adc5-72f418ed5dd7",
 			"key": "toolIds",
 			"value": [
 				"64c89939feb6a4ab6eedf4a3",
@@ -2373,27 +2373,27 @@
 			]
 		},
 		{
-			"id": "4af52106-d887-4bde-8ada-4c24741caf92",
+			"id": "7c4eaa09-bd6e-4ede-b43f-43643445132d",
 			"key": "currentToolId",
 			"value": "64c89939feb6a4ab6eedf4a3"
 		},
 		{
-			"id": "b0875e95-b4f2-4c6c-b3c0-68de940497d8",
+			"id": "8a5e704c-050a-48db-a900-a0c03d03e446",
 			"key": "ToDoListId",
 			"value": "6545d980404e4a17ca755312"
 		},
 		{
-			"id": "37f52e91-d7dc-45fb-8925-69bbc074da11",
+			"id": "cb36556a-14d4-4be4-b921-af2133b13987",
 			"key": "DoingListId",
 			"value": "6545d980404e4a17ca755313"
 		},
 		{
-			"id": "95fdc47c-fe52-43fb-ac6f-8364708e01a5",
+			"id": "fe95f2d2-6a9e-4d80-a910-b891fa7577ad",
 			"key": "DoneListId",
 			"value": "6545d980404e4a17ca755314"
 		},
 		{
-			"id": "40d36ceb-45bc-4a30-9836-b54322a310df",
+			"id": "f7679f04-3edd-4111-b704-8fdf43338921",
 			"key": "allBoardIds",
 			"value": [
 				"6541d7fba9bef02ec00c3022",
@@ -2419,58 +2419,58 @@
 			]
 		},
 		{
-			"id": "35fe3216-e551-4b41-8627-1fa4981535a7",
+			"id": "a873fae8-0121-4e01-b21b-6e3a95a2155e",
 			"key": "memberId",
 			"value": "61f6a14321c5f77bed29eaa1"
 		},
 		{
-			"id": "0054f817-4078-4236-b0e1-6a8077b9f42f",
+			"id": "5eea37dd-7312-4eec-863a-c30f0917d920",
 			"key": "currentBoardId",
 			"value": "6541d85521ab1143fe72a0c8"
 		},
 		{
-			"id": "b44b82ce-71e2-434d-81f4-ddd736a05176",
+			"id": "5aab67b3-31fd-40de-ac80-d95996b09e04",
 			"key": "listDoneID",
 			"value": "64cf66c2f2d3306074dbe86a"
 		},
 		{
-			"id": "755f5f4d-047c-4893-89cb-ed9f5819617a",
+			"id": "8fc82b70-4161-4006-ab7e-f9f5d42dc542",
 			"key": "listDelayId",
 			"value": "6545d982a0886d59f25f1a6f"
 		},
 		{
-			"id": "ed0cade6-58f5-4cb7-be0e-fdaaf917190c",
+			"id": "a95412f8-3955-459d-b5e6-f2a02ec6f016",
 			"key": "cardId",
 			"value": "6545d982f9ebf59a509bb511"
 		},
 		{
-			"id": "2b620240-8150-4ac2-9019-9a07571318e1",
+			"id": "fde9fd6c-8223-4245-a117-ed1918d09b9e",
 			"key": "boardId",
 			"value": ""
 		},
 		{
-			"id": "ce9d1a74-785a-4706-87b3-27a36a042c91",
+			"id": "7a7ceea7-702b-4f00-bcd6-f1eee8449353",
 			"key": "boardNumber",
 			"value": 1
 		},
 		{
-			"id": "1f284c59-a08f-41e4-b5ca-e55528e46834",
+			"id": "b2262ae7-755f-45c8-9bbd-618041ecb943",
 			"key": "boardName",
 			"value": ""
 		},
 		{
-			"id": "a89f32ad-a2c5-4889-88c5-dd462cbcfacc",
+			"id": "b09a738f-1bd0-4b00-88d5-deb0795791ba",
 			"key": "idOrganization",
 			"value": "e0590645-7180-42c7-8f9c-5359fdf197a4",
 			"type": "string"
 		},
 		{
-			"id": "b8dcd0d0-afbe-4873-a98b-7d3517a9b036",
+			"id": "83dfb277-f961-4598-afe3-f43630ea37b5",
 			"key": "userNameOfTheMember",
 			"value": "vitaliizghonnik"
 		},
 		{
-			"id": "e7061f13-ac25-4c2e-a0dd-f7b147f2ed87",
+			"id": "dcebb5be-4fa4-4a1c-83c4-bd30ce214e8e",
 			"key": "bugReportIds",
 			"value": [
 				"ID 373",
@@ -2479,12 +2479,12 @@
 			]
 		},
 		{
-			"id": "2d9dfe86-ec15-439b-a7ab-4a338cc7f6f3",
+			"id": "435e9597-d58e-442e-9327-2ddd5992b590",
 			"key": "firstBugReportId",
 			"value": "ID 123"
 		},
 		{
-			"id": "54ca1767-92cd-471f-8f4e-1a5262d4c723",
+			"id": "39ddc040-455a-4b5a-8fed-484a872f950f",
 			"key": "checklistName",
 			"value": ""
 		}
