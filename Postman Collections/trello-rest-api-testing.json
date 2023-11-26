@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "532f1e8e-2b13-413a-a4eb-ae779f08e2d2",
 		"name": "trello-rest-api-testing",
-		"description": "## Introduction\n\nTrello is a web-based, list-making application and famous project management tool used to manage projects, organize tasks and build team collaboration. The major idea of creating this collection _trello-rest-api-testing_ in Postman is to test the main functionality that the Trello application allows us to do such as create/get/delete boards, create/get lists, create/get/update/move cards, add new member/comment to a card, create a checklist on a card.\n\nEach request is tested with regards to testing status code, response body, headers, cookies.\n\nThis collection includes two folders: happy path testing and negative testing. _Happy path testing_ is executed to verify that the Trello application is working according to the specified requirements by providing valid _test_ data provided by the Trello developer team with [the Trello REST API documentation](https://developer.atlassian.com/cloud/trello/rest/api-group-actions/). On the other hand negative testing folder consists of requests that ensure that the Trello application can gracefully handle invalid input or unexpected user behavior.\n\n## Getting started\n\nBefore to start sending requests to the Trello REST API check out and familiar with the [API Introduction](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/#authentication-and-authorization) first to understand better what is the possibilities which Trello allows us to build.\n\n1. Creat a Trello Power-Up\n    \n\nTrello uses a delegated authentication and authorization flow, that means no usernames and passwords using there. Instead of it, to get started is needed to generate an API key. To do it you first need to have created Trello Power-Up. In this case check out [Managing Power-Up](https://developer.atlassian.com/cloud/trello/guides/power-ups/managing-power-ups/).\n\n2\\. Generate a new API key\n\nOnce you already have created a Power-Up you can [generate a new API key.](https://trello.com/power-ups/admin)\n\n3\\. Generate a Token access\n\nOn the same page where you found an API key at the right of it you can see the hyperlinked \"Token\" also known as a Secret. Follow this instruction: [https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/#authentication-and-authorization](https://)\n\n[Note:](https://) Token should be kept secret\n\n## Collection of requests\n\n#### Happy path\n\n1. Create a new board\n2. Get our member's data\n3. Get Boards that Member behind to\n4. Get all lists on the board\n5. Create a new list Delay\n6. Create a new card in To Do list\n7. Get all cards on the To Do list\n8. Undate contents of the card\n9. Add a member to the card\n10. Get the member of the card\n11. Create checklists in the card\n12. Move all cards from To Do list to Doing list\n13. Get all cards on the Doing list\n14. Add a new comment to the card\n15. Delete the board\n    \n\n#### Negative testing\n\n1. Getting deleted board\n    \n\n##### Missing authentication\n\n- Missing token\n    \n\n1. Create a new board\n    \n\n- Invalid token\n    \n\n1. Create a new board\n    \n\n##### Duplication of activities\n\n1. Adding the already added member to the card\n2. Moving cards that have been already moved all cards from To Do list to Doing\n3. Removing deleted board",
+		"description": "## Introduction\n\nTrello is a web-based, list-making application and famous project management tool used to manage projects, organize tasks and build team collaboration. The major idea of creating this collection _trello-rest-api-testing_ in Postman is to test the main functionality that the Trello application allows us to do such as create/get/delete boards, create/get lists, create/get/update/move cards, add new member/comment to a card, create a checklist on a card.\n\nEach request is tested with regards to testing status code, response body, headers, cookies.\n\nThis collection includes two folders: happy path testing and negative testing. _Happy path testing_ is executed to verify that the Trello application is working according to the specified requirements by providing valid _test_ data provided by the Trello developer team with [the Trello REST API documentation](https://developer.atlassian.com/cloud/trello/rest/api-group-actions/). On the other hand negative testing folder consists of requests that ensure that the Trello application can gracefully handle invalid input or unexpected user behavior.\n\n## Getting started\n\nBefore to start sending requests to the Trello REST API check out and familiar with the [API Introduction](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/#authentication-and-authorization) first to understand better what is the possibilities which Trello allows us to build.\n\n1. Creat a Trello Power-Up\n    \n\nTrello uses a delegated authentication and authorization flow, that means no usernames and passwords using there. Instead of it, to get started is needed to generate an API key. To do it you first need to have created Trello Power-Up. In this case check out [Managing Power-Up](https://developer.atlassian.com/cloud/trello/guides/power-ups/managing-power-ups/).\n\n2\\. Generate a new API key\n\nOnce you already have created a Power-Up you can [generate a new API key.](https://trello.com/power-ups/admin)\n\n3\\. Generate a Token access\n\nOn the same page where you found an API key at the right of it you can see the hyperlinked \"Token\" also known as a Secret. Follow this instruction: [https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/#authentication-and-authorization](https://)\n\n[Note:](https://) Token should be kept secret\n\n## Collection of requests\n\n#### Happy path\n\n1. Create a new board\n2. Get our member's data\n3. Get Boards that Member behind to\n4. Get all lists on the board\n5. Create a new list Delay\n6. Create a new card in To Do list\n7. Get all cards on the To Do list\n8. Undate contents of the card\n9. Add a member to the card\n10. Get the member of the card\n11. Move all cards from To Do list to Doing list\n12. Get all cards on the Doing list\n13. Add a new comment to the card\n14. Delete the board\n    \n\n#### Negative testing\n\n1. Getting deleted board\n    \n\n##### Missing authentication\n\n- Missing token\n    \n\n1. Create a new board\n    \n\n- Invalid token\n    \n\n1. Create a new board\n    \n\n##### Duplication of activities\n\n1. Adding the already added member to the card\n2. Moving cards that have been already moved all cards from To Do list to Doing\n3. Removing deleted board\n    \n\n#### Data Driven Testing\n\n1. Create checklists in the card",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -865,7 +865,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c49e93d1-92fd-4ee8-8a84-29fe98f08db7",
+								"id": "e4f48f2e-0bc9-4b8b-b4cc-4e88c0dd09db",
 								"exec": [
 									"//Testing status code\r",
 									"pm.test(\"Data about added member to the card has been successful retrieved, Status code is 200\", () => {\r",
@@ -890,7 +890,9 @@
 									"    pm.expect(memberData.username).to.be.a(\"string\");\r",
 									"    pm.expect(memberData.activityBlocked).to.eql(false);\r",
 									"    pm.expect(memberData.avatarUrl).to.include(\"https://trello-members.s3.amazonaws.com/\");\r",
-									"});"
+									"});\r",
+									"//Set next request \"Create checklists in the card\" from \"Data Driven Testing\" folder\r",
+									"postman.setNextRequest(\"Create checklists in the card\");"
 								],
 								"type": "text/javascript"
 							}
@@ -938,136 +940,6 @@
 							]
 						},
 						"description": "Get the members on a card\n\nIn order to ensure that the member has been added to the card."
-					},
-					"response": []
-				},
-				{
-					"name": "Create checklists in the card",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "0831ac38-8625-4ec7-b87f-e28ca57042a4",
-								"exec": [
-									"//If retrieving bugReportIds not availible from collection variable bugReportIds therefore getting from variable represented by array below\r",
-									"let bugReportIds = pm.collectionVariables.get(\"bugReportIds\");\r",
-									"\r",
-									"if(!bugReportIds) {\r",
-									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
-									"}\r",
-									"//Retrieving first bug report id from array and assigning it to variable\r",
-									"let firstBugReportId = bugReportIds.shift();\r",
-									"console.log(firstBugReportId);\r",
-									"//Setting value of firstBugReportId to collection variable with the same name\r",
-									"pm.collectionVariables.set(\"firstBugReportId\", firstBugReportId);\r",
-									"console.log(pm.collectionVariables.get(\"firstBugReportId\"));\r",
-									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
-									"pm.collectionVariables.set(\"bugReportIds\", bugReportIds);\r",
-									"console.log(pm.collectionVariables.get(\"bugReportIds\"));\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "730a520b-16bf-4951-bac7-0dc5b31ae756",
-								"exec": [
-									"//Status code of the response\r",
-									"pm.test(\"The checklist has been created successfully\", () => {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"//Parse the json format response\r",
-									"const response = pm.response.json(); \r",
-									"//Checking an appropriative properties of response body\r",
-									"//Response body is perpesented by nonempty object\r",
-									"pm.test(\"Getting response body is an object and not empty\", () => {\r",
-									"    pm.expect(response).to.be.an(\"object\");\r",
-									"    pm.expect(Object.keys(response)).to.not.be.empty;\r",
-									"});\r",
-									"//Checking that properties of checklist is accurate and checklist is created in the expected card and the board as well\r",
-									"pm.test(\"Properties of created checklist is appropriate\", () => {\r",
-									"    pm.expect(response.id).to.be.not.empty;\r",
-									"    pm.expect(response.name).to.be.a(\"string\");\r",
-									"    pm.expect(response.idBoard).to.eql(pm.collectionVariables.get(\"boardId\"));\r",
-									"    pm.expect(response.idCard).to.eql(pm.collectionVariables.get(\"cardId\"));\r",
-									"});\r",
-									"//Retrieving of renewed bugReportIds after request has been sent \r",
-									"let bugReportIds = pm.collectionVariables.get(\"bugReportIds\");\r",
-									"console.log(bugReportIds);\r",
-									"//If-else statement does the function of executing creating checklists untill the variable bugReportIds will not have an id\r",
-									"if(bugReportIds && bugReportIds.length > 0) {\r",
-									"    postman.setNextRequest(\"Create checklists in the card\");\r",
-									"    console.log(pm.info.requestName);\r",
-									"} else {\r",
-									"    postman.setNextRequest(\"Move all cards from To Do list to Doing\");\r",
-									"    console.log(pm.info.requestName);\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "0e96c260-aba6-49b3-9ff8-3344677ee67b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true,
-						"disabledSystemHeaders": {}
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"BugReportId\" : \"{{firstBugReportId}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/1/cards/:id/checklists?name=Recover steps to reproduce from bug report ID{{firstBugReportId}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"1",
-								"cards",
-								":id",
-								"checklists"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "Recover steps to reproduce from bug report ID{{firstBugReportId}}",
-									"description": "The name of the checklist"
-								},
-								{
-									"key": "pos",
-									"value": "top",
-									"description": "The position of the checklist on the card. One of: top, bottom, or a positive number."
-								},
-								{
-									"key": "token",
-									"value": "{{TrelloToken}}",
-									"description": "Trello's API uses token - based authentication to grant third-party applications access to the Trello API."
-								},
-								{
-									"key": "key",
-									"value": "{{TrelloKey}}",
-									"description": "This is a application key, which Trello uses to identify the application making the request."
-								}
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "{{cardId}}",
-									"description": "REQUIRED. The ID of the Card"
-								}
-							]
-						},
-						"description": "Create four checklists on a card that define distinct bug report IDs."
 					},
 					"response": []
 				},
@@ -1358,8 +1230,8 @@
 							"script": {
 								"id": "a60b10ff-4bcf-4727-a41f-5c14e12d52a9",
 								"exec": [
-									"\r",
-									"//In order to delete boards which would be stored in newly created collection variable in \"Get all board in Workspace\" request\r",
+									"/*\r",
+									"//In order to delete boards which would be stored in newly created collection variable in the \"Get all board in Workspace\" request\r",
 									"//in this specific case first send \"Create a new board\" request multiple times to create boards, then sent \"Get all board in Workspace\" request where will be created array with objects that represent boards and signed to allBoardIds collection variable.\r",
 									"//Getting variable allBoardIds and signing array with board's objects to variable allBoardIds\r",
 									"const allBoardIds = pm.collectionVariables.get(\"allBoardIds\")\r",
@@ -1373,7 +1245,7 @@
 									"pm.collectionVariables.set(\"currentBoardId\", currentBoardId);\r",
 									"//After collection variable currentBoardId has been used in the request to delete actually this particular board, there is need to setting up allBoardIds collection variable one more time without last remaided belove board \r",
 									"pm.collectionVariables.set(\"allBoardIds\", allBoardIds);\r",
-									""
+									"*/"
 								],
 								"type": "text/javascript"
 							}
@@ -1441,7 +1313,7 @@
 								}
 							]
 						},
-						"description": "There are two ways of using the request \"Delete a board\":\n\n1. The main reason for sending a current request is to delete the board with regard to the collection perspective, deleting the board that was created in the first request for collection called \"Create a new board\"\n    \n\nNOTE: To send this request there is no need to provide any changes. This case is set up as a default.\n\n1. Deleting boards one by one via sending the \"Delete a board\" request multiple times, if occurs the need to delete not just the last created board.\n    \n\nNOTE: Neither doesn't work from a collection perspective or doesn't allow deleting multiple boards at once.\n\nInstruction for the second way of using request the \"Delete a board\":\n\n1. Send the \"Get Boards in an Organization\" request first.\n    \n2. **Scripts in the** _**Pre-request Script**_ **section** are stored as comments are needed **in case if appears necessary to delete boards one by one** that were created before in Workspace. To execute this scenario - **delete the comment signs at the beginning \"/\\*\" and end of comments \"\\*/\" in Pre-request Script section**.\n    \n3. Go to the the Params section subsection Path Variables and change in value's field of id from \"boardId\" to \"currentBoardId\".\n    \n4. Send \"Delete a board\" as much time as it's needed. Until now, there are currently no boards in the Workspace when last board has been deleted. Getting status code 400 Bad Request and response body with following context \"invalid id\""
+						"description": "There are two ways of using the request \"Delete a board\":\n\n1. The main reason for sending a current request is to delete the board with regard to the collection perspective, deleting the board that was created in the first request for collection called \"Create a new board\"\n    \n\nNOTE: To send this request there is no need to provide any changes. This case is set up as a default.\n\n1. Deleting boards one by one via sending the \"Delete a board\" request multiple times, if occurs the need to delete not just the last created board.\n    \n\nNOTE: Neither doesn't work from a collection perspective or doesn't allow deleting multiple boards at once.\n\nInstruction for the second way of using request the \"Delete a board\":\n\n1. Send the \"Get Boards in an Organization\" request first.\n2. **Scripts in the** _**Pre-request Script**_ **section** are stored as comments are needed **in case if appears necessary to delete boards one by one** that were created before in Workspace. To execute this scenario - **delete the comment signs at the beginning \"/\\*\" and end of comments \"\\*/\" in Pre-request Script section**.\n3. Go to the the Params section subsection Path Variables and change in value's field of id from \"boardId\" to \"currentBoardId\".\n4. Send \"Delete a board\" as much time as it's needed. Until now, there are currently no boards in the Workspace when last board has been deleted. Getting status code 400 Bad Request and response body with following context \"invalid id\""
 					},
 					"response": []
 				}
@@ -2138,7 +2010,9 @@
 									"//Testing response body\r",
 									"pm.test(\"The response body represents a message about not existed requested to deleted board\", () => {\r",
 									"    pm.response.to.have.body(\"The requested resource was not found.\")\r",
-									"});"
+									"});\r",
+									"//This is a last running request from this collection, therefore there is needs to set next request a 'null' as a value\r",
+									"postman.setNextRequest(null);"
 								],
 								"type": "text/javascript"
 							}
@@ -2227,6 +2101,201 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Data Driven Testing",
+			"item": [
+				{
+					"name": "Create checklists in the card",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8b3908fa-73fa-4475-a21d-34daf0a5d7cd",
+								"exec": [
+									"console.log(pm.variables.get(\"validData\"));\r",
+									"console.log(parseInt(pm.variables.get(\"expectedStatus\")));\r",
+									"//Check status code of the response\r",
+									"if (pm.variables.get(\"validData\") === true) {\r",
+									"    pm.test(\"The status code is \" + pm.variables.get(\"expectedStatus\"), () => {\r",
+									"        pm.response.to.have.status(parseInt(pm.variables.get(\"expectedStatus\")));\r",
+									"//Checking that properties of checklist is accurate and checklist is created in the expected card and the board as well\r",
+									"    pm.test(\"Properties of created checklist is appropriate\", () => {\r",
+									"        //Parse the json format response\r",
+									"        const response = pm.response.json(); \r",
+									"        pm.expect(response.name).to.be.not.empty;\r",
+									"        pm.expect(response.name).to.be.a(\"string\");\r",
+									"        /*\r",
+									"        pm.expect(response.idBoard).to.eql(pm.collectionVariables.get(\"boardId\"));\r",
+									"        pm.expect(response.idCard).to.eql(pm.collectionVariables.get(\"cardId\"));\r",
+									"        */\r",
+									"    });\r",
+									"//Checking an appropriative properties of response body\r",
+									"//Response body is perpesented by nonempty object\r",
+									"    pm.test(\"Getting response body is an object and not empty\", () => {\r",
+									"        //Parse the json format response\r",
+									"        const response = pm.response.json(); \r",
+									"        pm.expect(response).to.be.an(\"object\");\r",
+									"        pm.expect(Object.keys(response)).to.not.be.empty;\r",
+									"    });\r",
+									"//Checking that a response header is present\r",
+									"    pm.test(\"Content-Type is present\", () => {\r",
+									"        pm.response.to.have.header(\"Content-Type\");\r",
+									"    });\r",
+									"//Checking that Content-Type header has a particular value\r",
+									"    pm.test(\"Content-Type header is a application/json\", () => {\r",
+									"        pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"    });\r",
+									"//Checking that Trello-Environment header is a \"Production\"\r",
+									"    pm.test(\"X-Trello-Environment header is a Production\", () => {\r",
+									"    pm.expect(pm.response.headers.get('X-Trello-Environment')).to.eql('Production');\r",
+									"    });\r",
+									"//Testing cookie \"preAuthProps\" is exist \r",
+									"    pm.test(\"Cookie preAuthProps is present\", () => {\r",
+									"        pm.expect(pm.cookies.has('preAuthProps')).to.be.true;\r",
+									"    });\r",
+									"});\r",
+									"} else {\r",
+									"    pm.test(\"Invalid data. Status code is \" + pm.variables.get(\"expectedStatus\"), () => {\r",
+									"        pm.response.to.have.status(parseInt(pm.variables.get(\"expectedStatus\")));\r",
+									"    });\r",
+									"//Checking that Content-Type header has a particular value\r",
+									"    pm.test(\"Content-Type header is text/plain\", () => {\r",
+									"        pm.expect(pm.response.headers.get('Content-Type')).to.include('text/plain');\r",
+									"    });\r",
+									"}\r",
+									"//Set next request \"Move all cards from To Do list to Doing\" from \"Happy path testing\" folder\r",
+									"postman.setNextRequest(\"Move all cards from To Do list to Doing\");\r",
+									"/*\r",
+									"//Retrieving of renewed bugReportIds after request has been sent \r",
+									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
+									"console.log(bugReportIds);\r",
+									"//If-else statement does the function of executing creating checklists untill the variable bugReportIds will not have an id\r",
+									"if(bugReportIds && bugReportIds.length > 0) {\r",
+									"    postman.setNextRequest(\"Create checklists in the card\");\r",
+									"    console.log(pm.info.requestName);\r",
+									"} else {\r",
+									"    postman.setNextRequest(\"Move all cards from To Do list to Doing\");\r",
+									"    console.log(pm.info.requestName);\r",
+									"};\r",
+									"*/"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "88fd8b2d-8451-478e-b49d-515ce693ba99",
+								"exec": [
+									"/*let checklistName = pm.variables.get(\"checklistName\");\r",
+									"if (checklistName.length === 5) {\r",
+									"    checklistName = \"a\".repeat(16383);\r",
+									"} else if ((parseInt(checklistName.length)) === 16384) {\r",
+									"    checklistName = \"a\".repeat(16384);\r",
+									"} else if ((parseInt(checklistName.length)) === 16385) {\r",
+									"    checklistName = \"a\".repeat(16385);\r",
+									"}\r",
+									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
+									"*/\r",
+									"/*\r",
+									"//Declare and initilize the bugRepostIds variable with an environment variable with the same name\r",
+									"let bugReportIds = pm.environment.get(\"bugReportIds\");\r",
+									"if (!bugReportIds) {\r",
+									"    bugReportIds = [\"ID 123\", \"ID 373\", \"ID 455\", \"ID 784\"];\r",
+									"}\r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"pm.environment.get(\"bugReportIds\");\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									"//Retrieving first bug report id from array and assigning it to variable\r",
+									"let firstBugReportId = bugReportIds.shift();\r",
+									"console.log(firstBugReportId);\r",
+									"//Setting value of firstBugReportId to collection variable with the same name\r",
+									"pm.environment.set(\"firstBugReportId\", firstBugReportId);\r",
+									"console.log(pm.environment.get(\"firstBugReportId\"));\r",
+									"//Setting collection variable with value of variable bugReportIds after first value has been retrieved from array \r",
+									"pm.environment.set(\"bugReportIds\", bugReportIds);\r",
+									"console.log(pm.environment.get(\"bugReportIds\"));\r",
+									"*/\r",
+									"\r",
+									"let checklistName = pm.variables.get(\"checklistName\");\r",
+									"console.log(checklistName);\r",
+									"pm.collectionVariables.set(\"checklistName\", checklistName);\r",
+									"console.log(pm.collectionVariables.get(\"checklistName\"));\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0e96c260-aba6-49b3-9ff8-3344677ee67b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{TrelloToken}}",
+								"key": "token",
+								"type": "string"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"checklistName\" : {{checklistName}},\r\n    \"validData\" : {{validData}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/1/checklists?idCard={{cardId}}&name={{checklistName}}&pos=top&token={{TrelloToken}}&key={{TrelloKey}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"1",
+								"checklists"
+							],
+							"query": [
+								{
+									"key": "idCard",
+									"value": "{{cardId}}",
+									"description": "The ID of the Card that the checklist should be added to."
+								},
+								{
+									"key": "name",
+									"value": "{{checklistName}}",
+									"description": "The name of the checklist. Should be a string of length 1 to 16384.\nMin length: 1\nMax length: 16384"
+								},
+								{
+									"key": "pos",
+									"value": "top",
+									"description": "The position of the checklist on the card. One of: top, bottom, or a positive number."
+								},
+								{
+									"key": "token",
+									"value": "{{TrelloToken}}",
+									"description": "Trello's API uses token - based authentication to grant third-party applications access to the Trello API."
+								},
+								{
+									"key": "key",
+									"value": "{{TrelloKey}}",
+									"description": "This is a application key, which Trello uses to identify the application making the request."
+								}
+							]
+						},
+						"description": "This request is supposed to create a checklist by using an external data file on a card. The main idea of proceeding with external file is IDs."
+					},
+					"response": []
+				}
+			],
+			"id": "21239659-8702-47cf-8473-b3ec9f559ce1"
 		}
 	],
 	"auth": {
@@ -2239,7 +2308,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "093b284d-1d26-4d53-8e90-96b0e31c815a",
+				"id": "e5234ea5-56f3-47db-b562-2affd1e463e7",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -2249,7 +2318,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "004af2d4-0d1f-4df4-95ee-8bed7ef6fbfc",
+				"id": "9ec2658f-1106-47ce-9bcf-98e122418328",
 				"type": "text/javascript",
 				"exec": [
 					"//Performance testing",
@@ -2262,81 +2331,162 @@
 	],
 	"variable": [
 		{
+			"id": "793555ba-15f7-4e62-96bb-10b2cb8744e5",
 			"key": "base_url",
 			"value": "https://api.trello.com"
 		},
 		{
+			"id": "f4b76d34-22a3-4e1f-9d86-b26dcde5eb07",
 			"key": "toolIds",
-			"value": ""
+			"value": [
+				"64c89939feb6a4ab6eedf4a3",
+				"64c0c144e5616372ed611e72",
+				"64c0bb618a191f265f8cd011",
+				"64c0bbc9d58ce68ddccafe49",
+				"645733cca381cb22a2f82f7b",
+				"64573fc83a6469edc0ab357d",
+				"6459f41aa9ad95560d42c207",
+				"64573f472b4d24ad2521c050",
+				"6459edf7464112cb6fbea303",
+				"647b63ea6e5b75f61f752d5d",
+				"64aced86bcc27a1108b4d71e",
+				"64c0b93fd97e2c4c27357a73",
+				"64573808a47682ab614bf23b",
+				"64770f55cdb94a7180288fd1",
+				"647b69185c79535c6c79602e",
+				"6457361042a221f2fc30a475",
+				"642bbe2e3e592becd24857d7",
+				"6453a82eef40da090ed5d5ec",
+				"6459f54308c733db4f257ca1",
+				"64573f4feab3d245ee67da29",
+				"64c0c313237e69cfd87adccc",
+				"64c0b830517422ef958d9851",
+				"6457346bfb9ac4ced0a45cb9",
+				"64c8a545964c4b29a10cad18",
+				"64b007748989a83c77f489f6",
+				"64759da11d7efbc7b01f0351",
+				"647353ee9171bf05d8bd5aae",
+				"64759fbb643786b012e67485",
+				"6475ad1f40cffdf34da57c0d",
+				"6476ea342fc84b48aab4e6cd",
+				"647362afaa87eab24b46d792"
+			]
 		},
 		{
+			"id": "913c8311-7203-4007-92d9-54a2e767d0a3",
 			"key": "currentToolId",
-			"value": ""
+			"value": "64c89939feb6a4ab6eedf4a3"
 		},
 		{
+			"id": "aa81a582-441e-488d-b1bd-7b1965d265bf",
 			"key": "ToDoListId",
-			"value": ""
+			"value": "6545d980404e4a17ca755312"
 		},
 		{
+			"id": "4d05aa7a-6ea5-408d-8d23-fff71db6d044",
 			"key": "DoingListId",
-			"value": ""
+			"value": "6545d980404e4a17ca755313"
 		},
 		{
+			"id": "241a1da3-b10c-4c8e-be38-14a95b779be6",
 			"key": "DoneListId",
-			"value": ""
+			"value": "6545d980404e4a17ca755314"
 		},
 		{
+			"id": "62270653-f26e-4eee-88d5-d73de24cb999",
 			"key": "allBoardIds",
-			"value": []
+			"value": [
+				"6541d7fba9bef02ec00c3022",
+				"6541ef48759c9b9429f69fe1",
+				"6541f10b2ee4da3e63c4b23e",
+				"6541fe6a714222715a292ad1",
+				"6545d713071e4a11727c4125",
+				"6538b7e5af8473155d225a20",
+				"6537572971f94fbfd4d5e98e",
+				"6540b763e7db2b8e2ff7d609",
+				"6545d719655615fcc6941d79",
+				"653757e34e15e0c7c7f193c1",
+				"6545d7dac8fa3adae1e6617a",
+				"65375d100cb4e88e74ee1515",
+				"6545d7e02f65e7300e9bcad5",
+				"6537637b7b87f82f79ccc88e",
+				"6545d97821a45a85f42f4e80",
+				"653765a01ba50fd37b10a32d",
+				"6545d980404e4a17ca75530b",
+				"653804926fa231cf8ca4accd",
+				"6541d610d34387b79523e94e",
+				"6541d85521ab1143fe72a0c8"
+			]
 		},
 		{
+			"id": "b3e12a38-23a7-4031-bbe4-b3bd26b7807a",
 			"key": "memberId",
-			"value": ""
+			"value": "61f6a14321c5f77bed29eaa1"
 		},
 		{
+			"id": "70962559-7615-48af-ba00-8b590d02a1a0",
 			"key": "currentBoardId",
-			"value": ""
+			"value": "6541d85521ab1143fe72a0c8"
 		},
 		{
+			"id": "9e1567df-0e22-40ff-9e3c-6ab54f111b90",
 			"key": "listDoneID",
-			"value": ""
+			"value": "64cf66c2f2d3306074dbe86a"
 		},
 		{
+			"id": "3b5b4d08-6ed3-40ea-af5d-5cd060e3faaf",
 			"key": "listDelayId",
-			"value": ""
+			"value": "6545d982a0886d59f25f1a6f"
 		},
 		{
+			"id": "3d7163f3-f8e5-4c22-a3e7-cea108619b42",
 			"key": "cardId",
-			"value": ""
+			"value": "6545d982f9ebf59a509bb511"
 		},
 		{
+			"id": "ed792d3e-4bf4-4f64-b70b-93f91fd09df1",
 			"key": "boardId",
 			"value": ""
 		},
 		{
+			"id": "5d409a89-51a4-4b7d-a7e7-785739f3e923",
 			"key": "boardNumber",
-			"value": ""
+			"value": 1
 		},
 		{
+			"id": "89d49443-0afa-48a7-af5f-f14ba4d5674e",
 			"key": "boardName",
 			"value": ""
 		},
 		{
+			"id": "da86addf-1980-4722-a281-fc148d72892f",
 			"key": "idOrganization",
-			"value": "Id of your organization",
+			"value": "e0590645-7180-42c7-8f9c-5359fdf197a4",
 			"type": "string"
 		},
 		{
+			"id": "39bfd213-fae9-4a44-9caa-5762f9b64683",
 			"key": "userNameOfTheMember",
-			"value": "Your own user name"
+			"value": "vitaliizghonnik"
 		},
 		{
+			"id": "9498c214-5f34-4547-90e0-1dd51648a654",
 			"key": "bugReportIds",
-			"value": []
+			"value": [
+				"ID 373",
+				"ID 455",
+				"ID 784"
+			]
 		},
 		{
+			"id": "a4abfaa7-e889-4879-a451-2084691694ef",
 			"key": "firstBugReportId",
-			"value": null
+			"value": "ID 123"
+		},
+		{
+			"id": "aa07cfad-0079-44ca-93f7-fe137a93d9cc",
+			"key": "checklistName",
+			"value": ""
 		}
 	]
 }
