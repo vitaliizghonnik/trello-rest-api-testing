@@ -2331,12 +2331,10 @@
 	],
 	"variable": [
 		{
-			"id": "793555ba-15f7-4e62-96bb-10b2cb8744e5",
 			"key": "base_url",
 			"value": "https://api.trello.com"
 		},
 		{
-			"id": "f4b76d34-22a3-4e1f-9d86-b26dcde5eb07",
 			"key": "toolIds",
 			"value": [
 				"64c89939feb6a4ab6eedf4a3",
@@ -2373,27 +2371,22 @@
 			]
 		},
 		{
-			"id": "913c8311-7203-4007-92d9-54a2e767d0a3",
 			"key": "currentToolId",
 			"value": "64c89939feb6a4ab6eedf4a3"
 		},
 		{
-			"id": "aa81a582-441e-488d-b1bd-7b1965d265bf",
 			"key": "ToDoListId",
 			"value": "6545d980404e4a17ca755312"
 		},
 		{
-			"id": "4d05aa7a-6ea5-408d-8d23-fff71db6d044",
 			"key": "DoingListId",
 			"value": "6545d980404e4a17ca755313"
 		},
 		{
-			"id": "241a1da3-b10c-4c8e-be38-14a95b779be6",
 			"key": "DoneListId",
 			"value": "6545d980404e4a17ca755314"
 		},
 		{
-			"id": "62270653-f26e-4eee-88d5-d73de24cb999",
 			"key": "allBoardIds",
 			"value": [
 				"6541d7fba9bef02ec00c3022",
@@ -2419,58 +2412,47 @@
 			]
 		},
 		{
-			"id": "b3e12a38-23a7-4031-bbe4-b3bd26b7807a",
 			"key": "memberId",
 			"value": "61f6a14321c5f77bed29eaa1"
 		},
 		{
-			"id": "70962559-7615-48af-ba00-8b590d02a1a0",
 			"key": "currentBoardId",
 			"value": "6541d85521ab1143fe72a0c8"
 		},
 		{
-			"id": "9e1567df-0e22-40ff-9e3c-6ab54f111b90",
 			"key": "listDoneID",
 			"value": "64cf66c2f2d3306074dbe86a"
 		},
 		{
-			"id": "3b5b4d08-6ed3-40ea-af5d-5cd060e3faaf",
 			"key": "listDelayId",
 			"value": "6545d982a0886d59f25f1a6f"
 		},
 		{
-			"id": "3d7163f3-f8e5-4c22-a3e7-cea108619b42",
 			"key": "cardId",
 			"value": "6545d982f9ebf59a509bb511"
 		},
 		{
-			"id": "ed792d3e-4bf4-4f64-b70b-93f91fd09df1",
 			"key": "boardId",
 			"value": ""
 		},
 		{
-			"id": "5d409a89-51a4-4b7d-a7e7-785739f3e923",
 			"key": "boardNumber",
 			"value": 1
 		},
 		{
-			"id": "89d49443-0afa-48a7-af5f-f14ba4d5674e",
 			"key": "boardName",
 			"value": ""
 		},
 		{
-			"id": "da86addf-1980-4722-a281-fc148d72892f",
 			"key": "idOrganization",
 			"value": "e0590645-7180-42c7-8f9c-5359fdf197a4",
 			"type": "string"
 		},
 		{
-			"id": "39bfd213-fae9-4a44-9caa-5762f9b64683",
 			"key": "userNameOfTheMember",
 			"value": "vitaliizghonnik"
 		},
 		{
-			"id": "9498c214-5f34-4547-90e0-1dd51648a654",
 			"key": "bugReportIds",
 			"value": [
 				"ID 373",
@@ -2479,12 +2461,10 @@
 			]
 		},
 		{
-			"id": "a4abfaa7-e889-4879-a451-2084691694ef",
 			"key": "firstBugReportId",
 			"value": "ID 123"
 		},
 		{
-			"id": "aa07cfad-0079-44ca-93f7-fe137a93d9cc",
 			"key": "checklistName",
 			"value": ""
 		}
